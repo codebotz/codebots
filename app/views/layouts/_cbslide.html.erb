@@ -1,0 +1,63 @@
+<!-- Carousel No se mostrará cuando el tamaño sea- XS-->
+<div id="cb-slide" style="padding-top: 80px; margin-top:-50px;" class="carousel slide hidden-xs" data-ride="carousel">
+    <!-- Botones Prev Next -->
+	<ol class="carousel-indicators">
+		<li data-target="#cb-slide" data-slide-to="0" class="active"></li>
+		<li data-target="#cb-slide" data-slide-to="1"></li>
+		<li data-target="#cb-slide" data-slide-to="2"></li>
+		<li data-target="#cb-slide" data-slide-to="3"></li>
+	</ol>
+	<!-- IMAGENES -->
+	<div class="carousel-inner" role="listbox">
+		<div class="item active">
+		<%= image_tag("ghost.jpg", :alt => "First slide", class: "img-responsive", :style => "width:100%;") %>
+			<div class="container">
+				<div class="carousel-caption">
+				  <h1 class="hidden-xs">Final Fantasy XV</h1>
+				  <p class="hidden-xs">
+				  EN Codebots.net puedes ver tutoriales de lenguajes de programación como Ruby y Java, las mejores prácticas en el maquetado de estructuras web con HTML5 y CSS3
+				  y puedes crear post en la sección de Foro.
+				  </p>
+				  <p><a class="btn btn-sm btn-primary" href="#" role="button">¡Regístrate ahora!</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+		<%= image_tag("daorigin.jpg", :alt => "Second slide", class: "img-responsive", :style => "width:100%;") %>
+			<div class="container">
+				<div class="carousel-caption">
+				  <h1 class="hidden-xs">SIC PARVIS MAGNA</h1>
+				  <p class="hidden-xs">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				  <p><a class="btn btn-sm btn-primary" href="#" role="button">¡Conócela!</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+		<%= image_tag("metro.jpg", :alt => "Third slide", class: "img-responsive", :style => "width:100%;") %>
+			<div class="container">
+				<div class="carousel-caption">
+				  <h1 class="hidden-xs">One more for good measure.</h1>
+				  <p class="hidden-xs">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				  <p><a class="btn btn-sm btn-primary" href="#" role="button">Ver imágenes</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+		<%= image_tag("wolf.jpg", :alt => "Fourth  slide", class: "img-responsive", :style => "width:100%;") %>
+			<div class="container">
+				<div class="carousel-caption">
+				  <h1 class="hidden-xs">Wolfenstein.</h1>
+				  <p class="hidden-xs">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				  <p><a class="btn btn-sm btn-primary" href="#" role="button">Reseña & Gameplay</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a class="left carousel-control" href="#cb-slide" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#cb-slide" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+<!-- /.carousel -->
+</div>

@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Codebots</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1"> 
+    <title>Codebots.net</title>
+    <meta name="description" content="Website to show a few tutorials about web programming, the the world of Testing and learn the new stuff in this world." />
+    <meta name="keywords" content="codebots.net, codebots, net, rubinmz, programming, ruby, css3 java, html5, javascript, jquery, rubyonrails, memes, blog, foro, fun, funny, tecnologia" />
+    <meta name="author" content="Codebots" />
+    <%= favicon_link_tag 'diamond-512f.png' %>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +16,21 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <%= render 'layouts/header' %>
+  	<%= render 'layouts/cbslide' %>
+	<!-- Contenido Principal -->
+  <!-- Sólo se pondrá el margentop cuando se este logeado-->
+    <div class="container-fluid well" style="<%= "margin-top: 50px"  if 1==2 %>">
+    	<section class="col-xs-12 col-sm-8 col-md-7 col-md-offset-1">
+			<%= yield %>
+		</section>
+		<section style="margin-top: 20px;"  class="col-xs-12 col-sm-4 col-md-3 center-block">
+    		<%= render 'layouts/aside' %>
+		</section>
+	<!-- /Contenido Principal -->
+    </div>
+
+
+	<%= render 'layouts/footer' %>
+  </body>	
 </html>

@@ -1,0 +1,2 @@
+class ArticulosController < ApplicationController
+end
