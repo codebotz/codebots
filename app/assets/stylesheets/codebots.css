@@ -61,6 +61,7 @@ section article{
 }
 aside{
  background: #0a090a; 
+
 }
 
 .divcol .content{
@@ -162,6 +163,7 @@ aside{
   #extra-content{
 	color: #fff;
 	padding: 15px;
+  margin-top: -10px;
   }
 
   #extra-content h3{
@@ -373,8 +375,17 @@ footer q {
   padding-bottom: 10px;
 }
 
-.Post{
-  font-family: 'Varsity';
+.marketing{
   font-size: .9em;
-  text-align: center;
+}
+
+.marketing p{
+  color: #000;
+}
+
+.marketing .post{
+  margin: 0 auto;
+}
+
+.panel{
 }
