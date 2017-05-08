@@ -21,6 +21,8 @@
   <!-- Contenido Principal -->
   <!-- Sólo se pondrá el margentop cuando se este logeado-->
     <div class="container-fluid well" style="<%= "margin-top: 50px"  if 1==2 %>">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
       <section class="col-xs-12 col-sm-8 col-md-7 col-md-offset-1">
           <%= yield %>
     	</section>

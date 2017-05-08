@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :usuarios
   resources :posts
   get 'pages/home'
   root 'pages#inicio'
