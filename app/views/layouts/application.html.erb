@@ -17,16 +17,18 @@
 
   <body>
     <%= render 'layouts/header' %>
-  	<%= render 'layouts/cbslide' %>
-	<!-- Contenido Principal -->
+    <%= render 'layouts/cbslide' %>
+  <!-- Contenido Principal -->
   <!-- Sólo se pondrá el margentop cuando se este logeado-->
     <div class="container-fluid well" style="<%= "margin-top: 50px"  if 1==2 %>">
-    	<section class="col-xs-12 col-sm-8 col-md-7 col-md-offset-1">
-			<%= yield %>
-		</section>
-		<section style="margin-top: 20px;"  class="col-xs-12 col-sm-4 col-md-3 center-block">
-    		<%= render 'layouts/aside' %>
-		</section>
+      <section class="col-xs-12 col-sm-8 col-md-7 col-md-offset-1">
+        
+          <%= yield %>
+        
+    	</section>
+    	<section style="margin-top: 20px;"  class="col-xs-12 col-sm-4 col-md-3 center-block">
+          <%= render 'layouts/aside' %>
+    	</section>
 	<!-- /Contenido Principal -->
     </div>
 

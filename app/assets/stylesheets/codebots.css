@@ -64,7 +64,7 @@ aside{
 }
 
 .divcol .content{
-  background: url("../img/bkg/seigaiha.png") repeat;
+  background: url('seigaiha.png') repeat;
   /*0A232F*/
   /*0C1720*/
   padding: .5em;
