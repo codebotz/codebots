@@ -1,3 +1,6 @@
+</div>
+<div class="panel-body">
+  
 <%= form_for(post) do |f| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -11,22 +14,28 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
+    <%= f.label :Usuario %>
+    <%= f.text_field :usuario_id, class: 'form-control', collection: Usuario.all, label_method: :nombre_completo %>
+  </div>
+
+  <div class="field form-group">
     <%= f.label :titulo %>
-    <%= f.text_field :titulo %>
+    <%= f.text_field :titulo, class: 'form-control'  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :contenido %>
-    <%= f.text_area :contenido %>
+    <%= f.text_area :contenido, class: 'form-control'  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :likes %>
-    <%= f.number_field :likes %>
+    <%= f.number_field :likes, class: 'form-control'  %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Crear post", class: 'btn btn-primary'  %>
   </div>
 <% end %>
+

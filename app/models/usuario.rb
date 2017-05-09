@@ -4,5 +4,11 @@ class Usuario < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-   attr_accessible	:nombre, :apellido, :nickname, :email, :encrypted_password
+   attr_accessible	:usuario_id, :nombre, :apellido, :nickname, :email, :password, :password_confirmation
+
+   has_many :posts
+
+   def nombre_completo
+   	nombre + " " + apellido   	
+   end
 end

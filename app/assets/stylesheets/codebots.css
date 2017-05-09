@@ -394,3 +394,11 @@ footer q {
 .panel-body{
   color: #000;
 }
+
+.black{
+  color: #000;
+}
+
+.panel-footer a{
+  color: #34495e;
+}

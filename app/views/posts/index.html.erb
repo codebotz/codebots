@@ -18,19 +18,20 @@
       <%= link_to post do%>
         <h4><%= post.titulo %></h4>
       <% end %>
-        <code><%= time_ago_in_words(post.created_at) %> ago</code>
-        <i class="fa fa-thumbs-o-up" aria-hidden="true"><%= post.likes%></i>
+        <code><%= time_ago_in_words(post.created_at) %> ago</code> por <strong><%= post.usuario.nickname%></strong>
       </div>
       <div class="panel-body">
         <p><%= post.contenido %></p>
       </div>
       <div class="panel-footer">
+      <button class="btn btn-sm btn-info">Rifa</button>
       <%= link_to edit_post_path(post) do%> 
         <i class="fa fa-pencil"> Editar</i>
       <% end %>
       <%= link_to post, method: :delete, data: {confirm: "¿Estás seguro de borrar este post?"} do %>
         <i class="fa fa-trash"> Eliminar</i>
       <% end %>
+      <span class="black pull-right"><i class="fa fa-thumbs-o-up" aria-hidden="true"> <%= post.likes%></i><span>
       </div>
     </div>
   </div>
