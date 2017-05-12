@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #resources :posts
   get 'pages/home'
   root 'pages#inicio'
+  get 'inicio', to: 'pages#inicio', as: :inicio
 
   devise_scope :usuario do
   	get 'registrar', to: 'devise/registrations#new', as: :registrar	
