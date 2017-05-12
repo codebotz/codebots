@@ -38,13 +38,13 @@
                                 </ul>
                             </li>
                             <li>
-                                <%= link_to posts_path do %>
+                                <%= link_to timeline_path do %>
                                     <i class="fa fa-picture-o"></i><span style="vertical-align: middle;"> imagenes</span>
                                 <% end %>
                             </li>
                             <li>
-                            <%= link_to posts_path do %>
-                                <i class="fa fa-commenting-o"></i><span style="vertical-align: middle;"> Foro</span>
+                            <%= link_to timeline_path do %>
+                                <i class="fa fa-commenting-o"></i><span style="vertical-align: middle;"> Timeline</span>
                             <% end %>
                             </li>
                         </ul>
@@ -75,8 +75,8 @@
                                 </li>
                             <% else %>
                                 <li>
-                                    <%= link_to new_usuario_session_path do %>
-                                        <i class="fa fa-sign-in"></i><span style="vertical-align: middle;"> Inicias sesion</span>
+                                    <%= link_to iniciar_path do %>
+                                        <i class="fa fa-sign-in"></i><span style="vertical-align: middle;"> Iniciar sesion</span>
                                     <% end %>
                                 </li>
                             <%end%>
@@ -95,7 +95,11 @@
                                     </ul>
                                 </li>
                             <% else %>
-                                <li><a href="#">Log in</a></li>                         
+                                <li>
+                                   <%= link_to iniciar_path do %>
+                                        <i class="fa fa-sign-in"></i><span style="vertical-align: middle;"> Iniciar sesion</span>
+                                    <% end %>
+                                </li>                         
                             <%end%>
                             <!--li><a href="#">Sign up</a></li-->
                         </ul>

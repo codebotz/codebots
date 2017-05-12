@@ -21,8 +21,35 @@
   <!-- Contenido Principal -->
   <!-- Sólo se pondrá el margentop cuando se este logeado-->
     <div class="container-fluid well" style="<%= "margin-top: 50px"  if 1==2 %>">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    
+
+    <div class="row">
+      <div class="container">
+        <% flash.each do |type, message| %>
+          <!-- modificar para que solo envie un mensaje -->
+          <% if flash[:notice] %>
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hiden="true">x</button>
+              <%= flash[:notice]%>
+            </div>
+          <%end%>
+
+          <% if flash[:alert] %>
+            <div class="alert alert-danger alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hiden="true">x</button>
+              <%= flash[:alert]%>
+            </div>
+          <%end%>
+
+          
+          <div class="alert <%= flash_class type %> alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hiden="true">x</button>
+            <%= message %>
+          </div>
+        <%end%>      
+      </div>
+    </div>
+
       <section class="col-xs-12 col-sm-8 col-md-7 col-md-offset-1">
           <%= yield %>
     	</section>
