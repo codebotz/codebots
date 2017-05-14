@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'perfil/show'
+
   devise_for :usuarios
   #resources :posts
   get 'pages/home'
@@ -16,7 +18,10 @@ Rails.application.routes.draw do
     get 'timeline', to: 'posts#index', as: :timeline
     root to: 'posts#inedex'
 
-    get '/:id', to: 'perfil#show'
+    #Para ir a perfil propio
+    get 'miperfil', to: 'pages#home'
+    #Para mostrar el perfil del usuario
+    get '/:id', to: 'pages#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

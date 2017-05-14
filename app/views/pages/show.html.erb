@@ -1,15 +1,12 @@
-<br>
-<br>
-<div class="container-fluid">
+<div class="ccontainer-fluid perfil">
 <!-- Heading Row -->    
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12 col-sm12 col-lg-8">
                 <%= image_tag("planet-default.jpg", :alt => "Portada Default", class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %>
             </div>
             <!-- /.col-md-8 -->
-            <div class="col-md-4">
-                <h1><%= @usuario.nombre_completo %></h1>
-                <h3><%= @usuario.nickname %></h3>
+            <div class="col-md-12 col-sm-12 col-lg-4">
+                <h1><%= @usuario.nombre_completo %></h1><h3><%= @usuario.nickname %></h3>
                 <hr>
                 <!-- Descripción corta del perfil... Maximo 300 caracteres -->
                 <p>
@@ -39,6 +36,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+
         <!-- Content Row -->
         <div class="row">
             <div class="col-md-4">
@@ -64,8 +62,7 @@
     <!-- /.container -->
 </div>
 
-        <hr>
-
+<hr>
 
 <% if @posts%>
 <div class="row marketing">
@@ -98,8 +95,8 @@
 
       <span class="pull-right"><i class="fa fa-diamond" aria-hidden="true"> <%= post.likes%></i><span>
       </div>
-        </div>
-      </div>
-    <% end %>
+	    </div>
+	  </div>
+	<% end %>
 </div>
 <%end%>

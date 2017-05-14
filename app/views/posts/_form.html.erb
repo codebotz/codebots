@@ -14,10 +14,9 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= f.label :Usuario %>
-    <%= f.text_field :usuario_id, class: 'form-control', collection: Usuario.all, label_method: :nombre_completo %>
-  </div>
+  
+  <%= f.hidden_field :usuario_id, value: current_usuario.id %>
+  
 
   <div class="field form-group">
     <%= f.label :titulo %>

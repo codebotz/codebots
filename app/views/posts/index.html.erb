@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
-
+<br>
+<br>
 <div class="panel panel-default">  
   <div class="panel-heading">
     <h2>Todos los Posts</h2>
-    <%= link_to 'Crear post', new_post_path, class: "btn btn-primary" %>
+    <%= link_to new_post_path, class: "btn btn-md btn-primary", alt: "Nuevo post" do%>
+      <i class="fa fa-plus" aria-hidden="true"> </i> Crear post
+    <% end %>
   </div>
   <div class="panel-body">
     <p></p>
@@ -12,26 +14,32 @@
 <div class="row marketing">
 <% @posts.each do |post| %>
   <div class="col-lg-6 post">
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
       <!-- Default panel contents -->
       <div class="panel-heading">
       <%= link_to post do%>
         <h4><%= post.titulo %></h4>
       <% end %>
-        <code><%= time_ago_in_words(post.created_at) %> ago</code> por <strong><%= post.usuario.nickname%></strong>
+        <!--code><%= time_ago_in_words(post.created_at) %> ago</code> por <strong><%= post.usuario.nickname%></strong-->
+        <code><%= time_ago_in_words(post.created_at) %> ago</code> por <strong><%= link_to post.usuario.nickname, post.usuario.nickname %></strong>
       </div>
       <div class="panel-body">
         <p><%= post.contenido %></p>
       </div>
       <div class="panel-footer">
-      <button class="btn btn-sm btn-info">Rifa</button>
-      <%= link_to edit_post_path(post) do%> 
-        <i class="fa fa-pencil"> Editar</i>
+      <a href="#"><kbd><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Me gusta</kbd></a>
+      <% if usuario_signed_in? %>
+        <% if post.usuario_id == current_usuario.id %>
+          <%= link_to edit_post_path(post) do%> 
+            <i class="fa fa-pencil"> Editar</i>
+          <% end %>
+          <%= link_to post, method: :delete, data: {confirm: "¿Estás seguro de borrar este post?"} do %>
+            <i class="fa fa-trash"> Eliminar</i>
+          <% end %>
+        <% end %>
       <% end %>
-      <%= link_to post, method: :delete, data: {confirm: "¿Estás seguro de borrar este post?"} do %>
-        <i class="fa fa-trash"> Eliminar</i>
-      <% end %>
-      <span class="black pull-right"><i class="fa fa-thumbs-o-up" aria-hidden="true"> <%= post.likes%></i><span>
+
+      <span class="pull-right"><i class="fa fa-diamond" aria-hidden="true"> <%= post.likes%></i><span>
       </div>
     </div>
   </div>

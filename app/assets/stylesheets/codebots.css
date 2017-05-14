@@ -163,7 +163,7 @@ aside{
   #extra-content{
 	color: #fff;
 	padding: 15px;
-  margin-top: -10px;
+  margin-top: 30px;
   }
 
   #extra-content h3{
@@ -341,12 +341,36 @@ footer #categorias li a:hover{
 	padding:0;
 }
 
-.tpost{
-	font-family: "Tittle-Post";
+.post{
+  font-size: .95em;
+  margin-top: 30px;
+  color: #fff;
+  /*width: calc(50% - 40px);*/
 }
 
 
 
+.post > h4 > a{
+  color: #e74c3c;
+}
+
+.code{
+  /*background-color: #f9f2f4;*/
+  background-color: #17202a;
+}
+
+.panel-default > .panel-heading{
+  padding: 5px;
+}
+
+.panel-footer{
+  padding: 3px; 
+  color: #fff;
+}
+
+.panel-body-padding{
+  padding: 5px;
+}
 
 @media (min-width: 768px) {
   .lead {
@@ -395,10 +419,95 @@ footer q {
   color: #000;
 }
 
+.panel-info{
+  background: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+}
+
+.panel-default .panel-body {
+  padding: 5px;
+  color: #fff;
+}
+
+.panel-default .panel-body p{
+  color: #000;
+}
+
+
+
+.panel-primary .panel-body p{
+  color: #000;
+}
+
+.panel-body p{
+  color: #fff;
+  padding: 0px;
+}
+
+.panel-primary{
+  background: url('seigaiha.png') repeat;
+}
+
+.panel-default{
+  background: #000;
+}
+
+
 .black{
   color: #000;
 }
 
-.panel-footer a{
-  color: #34495e;
+.panel-footer{
+  padding: 7px 15px; 
+  color:   #f6c0d6;
 }
+
+.panel-footer a{
+  color: #f9cddf;
+  -webkit-transition: all .4s ease-in-out;
+       -o-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+}
+
+.panel-footer a:hover{
+  color: #d8729c;
+  -webkit-transition: all .4s ease-in-out;
+       -o-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+}
+
+.panel-heading h2{
+  color: #fff;
+  text-align: center;
+}
+
+.panel-heading strong a{
+   color:  #b2234c;
+   -webkit-transition: all .4s ease-in-out;
+       -o-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+}
+
+.panel-heading strong a:hover{
+   color: #f9cddf;
+   -webkit-transition: all .4s ease-in-out;
+       -o-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+}
+
+.perfil{
+  margin-top: 50px;
+}
+
+.cbslide{
+  margin-top: 50px; 
+}
+.articles{
+  margin-top: 30px;
+}
+
+#flash-notice{
+  position: absolute;
+}
+

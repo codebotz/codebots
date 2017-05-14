@@ -24,7 +24,7 @@
                                 <% end %>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="fa fa-diamond"></i><span style="vertical-align: middle;"> Tutoriales </span>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="fa fa-code"></i><span style="vertical-align: middle;"> Tutoriales </span>
                                 <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -69,6 +69,7 @@
                                          <%= current_usuario.nickname%> <i class="fa fa-user-circle-o" aria-hidden="false"></i><span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu">
+                                        <li><%= link_to raw('<i class="fa fa-diamond" aria-hidden="true"></i> Mi Perfil'), miperfil_path %></li>
                                         <li><%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i> Editar cuenta'), edit_usuario_registration_path %></li>
                                         <li><%= link_to raw('<i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesion'), destroy_usuario_session_path, method: :delete %></li>
                                     </ul>
@@ -90,6 +91,7 @@
                                         <i class="fa fa-user-circle-o" aria-hidden="true"></i> usuario<span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu">
+                                        <li><%= link_to raw('<i class="fa fa-diamond" aria-hidden="true"></i> Mi Perfil'), miperfil_path %></li>
                                         <li><%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i> Editar cuenta'), edit_usuario_registration_path %></li>
                                         <li><%= link_to raw('<i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesion'), destroy_usuario_session_path, method: :delete %></li>
                                     </ul>
