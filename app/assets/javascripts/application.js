@@ -11,6 +11,17 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+/*
+$(function(){
+  $('#postdiv').masonry({
+    itemSelector: '.box',
+    columnWidth: 200,
+    isAnimated: !Modernizr.csstransitions,
+    isFitWidth: true
+  });
+});
+*/

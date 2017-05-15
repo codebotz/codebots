@@ -342,6 +342,7 @@ footer #categorias li a:hover{
 }
 
 .post{
+  max-width: 300px;
   font-size: .95em;
   margin-top: 30px;
   color: #fff;
@@ -449,6 +450,25 @@ footer q {
   background: url('seigaiha.png') repeat;
 }
 
+.panel-primary .panel-heading h4{
+  color: #2ecc71;
+  font-size: 1.2em;
+    -webkit-transition: all .4s ease-in-out;
+       -o-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+}
+
+.panel-heading h2{
+  color: #2ecc71;
+  font-family: Fuente5;
+}
+.panel-heading h4:hover{
+  color: #ecf0f1;
+    -webkit-transition: all .4s ease-in-out;
+       -o-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+}
+
 .panel-default{
   background: #000;
 }
@@ -511,3 +531,4 @@ footer q {
   position: absolute;
 }
 
+.centered { margin: 0 auto; }

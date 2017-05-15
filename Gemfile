@@ -42,6 +42,11 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'protected_attributes_continued'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
+gem 'will_paginate-bootstrap'
+gem 'masonry-rails', '~> 0.2.4'
+gem 'jquery-turbolinks'
+#gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

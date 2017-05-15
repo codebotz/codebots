@@ -1,38 +1,39 @@
+<br>
+<br>
 
 
 <p id="notice"><%= notice %></p>
 
+<div class="well">
+	<!-- Heading Row -->    
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default">
+				<div class="panel-heading center">
+					<strong><%= @post.usuario.nombre_completo%></strong>
+				</div>
 
-
-
-
-
-
-<br>
-<br>
-<div class="cotainer">
-<!-- Heading Row -->    
-<strong><%= @post.usuario.nombre_completo%></strong></pre>
-        <div class="row">
-            <div class="col-md-12">
-                <%= @post.titulo %>
-            </div>
-            <!-- /.col-md-8 -->
-            <div class="col-md-12">
+			<div class="panel-body">
+                <h2><%= @post.titulo %></h2>
                 <p><%= @post.contenido %></p>
-                <hr>
+        		likes: <%= @post.likes %>
+	    	    <hr>
+		        <p>comentarios</p>
             </div>
+                <hr>
+
+                <div class="panel-footer">
+					<% if @post.usuario == current_usuario %>
+						<%= link_to edit_post_path(@post) do %> 
+						<i class="fa fa-pencil" aria-hidden="true"></i> Editar
+						<%end%>
+					<%end%>
+					<%= link_to posts_path do %>
+						<i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar
+					<%end%>
+				</div>
             <!-- /.col-md-4 -->
         </div>
-        <!-- /.row -->
-
-        <hr>
-        <p>comentarios</p>
-
-        likes: <%= @post.likes %>
-
 </div>
-
-
-<%= link_to 'Editar', edit_post_path(@post) %> |
-<%= link_to 'Regresar', posts_path %>
+</div>
+</div>

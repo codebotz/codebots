@@ -78,10 +78,13 @@
         <code><%= time_ago_in_words(post.created_at) %> ago</code> por <strong><%= link_to post.usuario.nickname, post.usuario.nickname %></strong>
       </div>
       <div class="panel-body">
-        <p><%= post.contenido %></p>
+        <p><%= truncate(post.contenido.html_safe, :length => 250) %></p>
+          <% if (post.contenido.length > 250) %>
+            <%= link_to "Ver más", post%>
+          <% end %>
       </div>
       <div class="panel-footer">
-      <a href="#"><kbd><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Me gusta</kbd></a>
+      <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Me gusta</a>
       <% if usuario_signed_in? %>
         <% if post.usuario_id == current_usuario.id %>
           <%= link_to edit_post_path(post) do%> 
