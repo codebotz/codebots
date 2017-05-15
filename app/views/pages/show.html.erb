@@ -1,12 +1,12 @@
-<div class="ccontainer-fluid perfil">
+<div class="container-fluid perfil">
 <!-- Heading Row -->    
         <div class="row">
-            <div class="col-md-12 col-sm12 col-lg-8">
-                <%= image_tag("planet-default.jpg", :alt => "Portada Default", class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %>
+            <div class="col-md-8 col-sm12 col-lg-8">
+                <%= image_tag("900x350.png", :alt => "Portada Default", class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %>
             </div>
             <!-- /.col-md-8 -->
             <div class="col-md-12 col-sm-12 col-lg-4">
-                <h1><%= @usuario.nombre_completo %></h1><h3><%= @usuario.nickname %></h3>
+                <h1><%= @usuario.nombre_completo %><small> <%= @usuario.nickname %></small></h1>
                 <hr>
                 <!-- Descripción corta del perfil... Maximo 300 caracteres -->
                 <p>
@@ -67,7 +67,7 @@
 <% if @posts%>
 <div class="row marketing">
 <% @posts.each do |post| %>
-  <div class="col-lg-6 post">
+  <div class="col-lg-6">
     <div class="panel panel-primary">
       <!-- Default panel contents -->
       <div class="panel-heading">

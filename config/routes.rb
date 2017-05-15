@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     root to: 'posts#inedex'
 
     #Para ir a perfil propio
-    get 'miperfil', to: 'pages#home'
+    get 'home', to: 'pages#home'
     #Para mostrar el perfil del usuario
     get '/:id', to: 'pages#show'
 

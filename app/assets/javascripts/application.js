@@ -15,7 +15,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-/*
+
 $(function(){
   $('#postdiv').masonry({
     itemSelector: '.box',
@@ -24,4 +24,3 @@ $(function(){
     isFitWidth: true
   });
 });
-*/
