@@ -17,7 +17,7 @@
                 <%= content_with_emoji(@post.contenido) %>
         		likes: <%= @post.likes %>
 	    	    <hr>
-	    	    <code><%= time_ago_in_words(@post.created_at) %> ago por <%= @post.usuario.nombre_completo%></code>
+	    	    <code>Hace <%= time_ago_in_words(@post.created_at) %> por <%= @post.usuario.nombre_completo%></code>
 		        <br>
 		        comentarios
             </div>
