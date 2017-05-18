@@ -25,7 +25,10 @@
 
   <div class="field form-group">
     <%= f.label :contenido %>
-    <%= f.text_area :contenido, class: 'form-control'  %>
+    <p class="emoji-picker-container">
+      <%= f.text_field :contenido, class: 'form-control', data: { emojiable: true } %>
+    </p>
+    <!--%= f.text_area :contenido, class: 'form-control'  %-->
   </div>
 
   <div class="field form-group">
@@ -34,7 +37,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Crear post", class: 'btn btn-primary'  %>
+    <%= f.submit "Generar post", class: 'btn btn-primary'  %>
   </div>
 <% end %>
 

@@ -96,11 +96,12 @@
           <% end %>
         <% end %>
       <% end %>
-
       <span class="pull-right"><i class="fa fa-diamond" aria-hidden="true"> <%= post.likes%></i><span>
       </div>
         </div>
       </div>
     <% end %>
 </div>
+<%= will_paginate @post %>
+<div class="clearfix visible-sm-block"></div>
 <%end%>

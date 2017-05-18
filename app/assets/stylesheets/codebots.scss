@@ -261,6 +261,7 @@ footer #categorias li a:hover{
 	color: #fff;
 }
 
+
 .blk-footer {
     background: #0e0e10 none repeat scroll 0 0;
     font-size: 0.8em;
@@ -342,14 +343,16 @@ footer #categorias li a:hover{
 }
 
 .post{
-  max-width: 300px;
+  /*max-width: 300px;*/
   font-size: .95em;
   margin-top: 30px;
   color: #fff;
   /*width: calc(50% - 40px);*/
 }
 
-
+.post p{
+  color: #fff;
+}
 
 .post > h4 > a{
   color: #e74c3c;

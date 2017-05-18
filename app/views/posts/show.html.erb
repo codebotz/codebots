@@ -7,18 +7,19 @@
 <div class="well">
 	<!-- Heading Row -->    
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-12 col-md-offset-0">
 			<div class="panel panel-default">
 				<div class="panel-heading center">
-					<strong><%= @post.usuario.nombre_completo%></strong>
+					<strong><%= @post.titulo %></strong>
 				</div>
 
-			<div class="panel-body">
-                <h2><%= @post.titulo %></h2>
-                <p><%= @post.contenido %></p>
+			<div class="panel-body post">
+                <%= content_with_emoji(@post.contenido) %>
         		likes: <%= @post.likes %>
 	    	    <hr>
-		        <p>comentarios</p>
+	    	    <code><%= time_ago_in_words(@post.created_at) %> ago por <%= @post.usuario.nombre_completo%></code>
+		        <br>
+		        comentarios
             </div>
                 <hr>
 

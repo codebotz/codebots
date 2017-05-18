@@ -33,13 +33,13 @@
             <h4><%= post.titulo %></h4>
           <% end %>
             <!--code><%= time_ago_in_words(post.created_at) %> ago</code> por <strong><%= post.usuario.nickname%></strong-->
-            <%= time_ago_in_words(post.created_at) %> ago por <strong><%= link_to post.usuario.nickname, post.usuario.nickname %></strong>
+            Hace <%= time_ago_in_words(post.created_at) %> por <strong><%= link_to post.usuario.nickname, post.usuario.nickname %></strong>
           </div>
           <!-- end Panel heading -->
           <!-- Panel body -->
           <div class="panel-body">
             <!-- Contenido solo muestra todo si es menor a 250 caracteres -->
-            <p><%= truncate(post.contenido.html_safe, :length => 250) %></p>
+            <p><%= content_with_emoji(truncate(post.contenido.html_safe, :length => 250)) %></p>
             <% if (post.contenido.length > 250) %>
               <%= link_to "Ver más", post%>
             <% end %>

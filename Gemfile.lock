@@ -61,6 +61,8 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
+    emoji (1.0.7)
+      json
     erubis (2.7.0)
     execjs (2.7.0)
     font-awesome-rails (4.7.0.2)
@@ -78,6 +80,7 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
+    json (2.1.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -122,6 +125,8 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_emoji_picker (0.1.5)
+      emoji
     rails_serve_static_assets (0.0.5)
     rails_stdout_logging (0.0.5)
     railties (5.0.2)
@@ -191,6 +196,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.2)
   rails_12factor
+  rails_emoji_picker
   sass-rails (~> 5.0)
   sqlite3
   turbolinks (~> 5)

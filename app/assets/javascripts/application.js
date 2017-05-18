@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require rails_emoji_picker
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
@@ -24,3 +25,8 @@ $(function(){
     isFitWidth: true
   });
 });
+
+jQuery ->
+ $(window).scroll ->
+   if $(window).scrollTop() > $(document).height() — $(window).height() — 50
+     alert("Final de la página")

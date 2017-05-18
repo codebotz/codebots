@@ -46,6 +46,8 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 gem 'will_paginate-bootstrap'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'jquery-turbolinks'
+gem 'rails_emoji_picker'#https://github.com/ID25/rails_emoji_picker
+#gem 'kaminari', '~> 1.0', '>= 1.0.1'
 #gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
