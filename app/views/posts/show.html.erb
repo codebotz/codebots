@@ -16,7 +16,7 @@
 						<br>
 		    	    	
 		    	    	<div class="pull-left">
-		    	    		Hace <%= time_ago_in_words(@post.created_at) %> por <%= link_to @post.usuario.nickname do%>
+		    	    		Hace <%= time_ago_in_words(@post.created_at) %> por <%= link_to "/#{@post.usuario.nickname}" do%>
 		    	    		<%= @post.usuario.nombre_completo%>
 		    	    		<% end %>
 		    	    	</div>	

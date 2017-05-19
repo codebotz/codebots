@@ -54,6 +54,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def usuario(id)
+    Usuario.find(params[:id])
+  end
+
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
