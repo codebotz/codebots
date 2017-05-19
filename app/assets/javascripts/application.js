@@ -14,7 +14,6 @@
 //= require rails_emoji_picker
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 $(function(){
