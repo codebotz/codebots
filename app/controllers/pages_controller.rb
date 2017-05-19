@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   	@usuario = Usuario.find_by_nickname(nickname)
   		if @usuario
 		  	puts @usuario.class
-		  	@posts = @usuario.posts.all.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
+		  	@posts = @usuario.posts.all.order(created_at: :desc).paginate(page: params[:page], per_page: 6)
 		  	render :home
 		else
 			render file: 'public/404', status: 404, formats: [:html]
@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   	@usuario = Usuario.find_by_nickname(params[:id])
   	if @usuario
   		#Traer post solo de este usuario
-  		@posts = @usuario.posts.all.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
+  		@posts = @usuario.posts.all.order(created_at: :desc).paginate(page: params[:page], per_page: 6)
   	 	render :show
   	 else
   	 	render file: 'public/404', status: 404, formats: [:html]

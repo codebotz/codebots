@@ -31,6 +31,11 @@
     src:url('varsity.ttf');
 }
 
+@font-face {
+    font-family: "Lakmus";
+    src:url('Lakmus.ttf');
+}
+
 header, footer{
   /*background: #0E0A10;*/
   background: #000;
@@ -40,6 +45,17 @@ header, footer{
 
 a:hover{
   text-decoration: none;
+  color: #2980b9;  
+  -webkit-transition: all .4s ease-in-out;
+       -o-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+}
+
+a{
+  color: #d8729c;
+  -webkit-transition: all .4s ease-in-out;
+       -o-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
 }
 
 body{
@@ -345,13 +361,19 @@ footer #categorias li a:hover{
 .post{
   /*max-width: 300px;*/
   font-size: .95em;
-  margin-top: 30px;
   color: #fff;
   /*width: calc(50% - 40px);*/
 }
 
+.post h3{
+  font-family: 'Varsity';
+}
 .post p{
   color: #fff;
+}
+
+.post a{
+  color: #d8729c;
 }
 
 .post > h4 > a{
@@ -500,7 +522,7 @@ footer q {
 
 .panel-heading h2{
   color: #ecf0f1;
-  font-family: 'Fuente5';
+  font-family: 'Varsity';
   text-align: left;
 }
 

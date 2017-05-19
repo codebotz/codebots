@@ -10,20 +10,35 @@
 		<div class="col-md-12 col-md-offset-0">
 			<div class="panel panel-default">
 				<div class="panel-heading center">
-					<strong><%= @post.titulo %></strong>
+					<div class="row container-fluid post">
+						<h3><%= @post.titulo %></h3>
+						<br>
+						<br>
+		    	    	
+		    	    	<div class="pull-left">
+		    	    		Hace <%= time_ago_in_words(@post.created_at) %> por <%= link_to @post.usuario.nickname do%>
+		    	    		<%= @post.usuario.nombre_completo%>
+		    	    		<% end %>
+		    	    	</div>	
+					</div>
 				</div>
 
 			<div class="panel-body post">
                 <%= content_with_emoji(@post.contenido) %>
-        		likes: <%= @post.likes %>
 	    	    <hr>
-	    	    <code>Hace <%= time_ago_in_words(@post.created_at) %> por <%= @post.usuario.nombre_completo%></code>
-		        <br>
-		        comentarios
+		        <small>Comentarios</small>	
             </div>
-                <hr>
 
-                <div class="panel-footer">
+            <div class="panel-footer">
+            	<div class="row container-fluid">
+					<div class="pull-left">
+						<%= @post.updated_at %> 
+					</div>
+					<div class="pull-right">
+						<i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <%= @post.likes %>
+					</div>
+				</div>
+				<div class="row container-fluid">
 					<% if @post.usuario == current_usuario %>
 						<%= link_to edit_post_path(@post) do %> 
 						<i class="fa fa-pencil" aria-hidden="true"></i> Editar
@@ -33,6 +48,8 @@
 						<i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar
 					<%end%>
 				</div>
+
+			</div>
             <!-- /.col-md-4 -->
         </div>
 </div>

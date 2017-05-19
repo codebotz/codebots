@@ -76,7 +76,7 @@
         <h4><%= post.titulo %></h4>
       <% end %>
         <!--code><%= time_ago_in_words(post.created_at) %> ago</code> por <strong><%= post.usuario.nickname%></strong-->
-        <code><%= time_ago_in_words(post.created_at) %> ago</code> por <strong><%= link_to post.usuario.nickname, post.usuario.nickname %></strong>
+        <code>Hace <%= time_ago_in_words(post.created_at) %></code> por <strong><%= link_to post.usuario.nickname, post.usuario.nickname %></strong>
       </div>
       <div class="panel-body">
         <p><%= truncate(post.contenido.html_safe, :length => 250) %></p>
