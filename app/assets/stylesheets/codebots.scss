@@ -380,6 +380,12 @@ footer #categorias li a:hover{
   color: #e74c3c;
 }
 
+
+.post-actions{
+  font-size: .7em;
+  width: 70%;
+}
+
 .code{
   /*background-color: #f9f2f4;*/
   background-color: #17202a;
@@ -557,3 +563,14 @@ footer q {
 
 .centered { margin: 0 auto; }
 .clearfix { display: inline-block; }
+
+.usuario-datos{
+  font-size: .85em;
+  color: #ccc;
+  margin-top: 0;
+  padding: 0;
+}
+
+.emoji-picker-container{
+  width: 100%;
+}

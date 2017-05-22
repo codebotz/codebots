@@ -14,6 +14,7 @@
 //= require rails_emoji_picker
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require social-share-button
 //= require_tree .
 
 $(function(){
@@ -29,4 +30,4 @@ $(function(){
  $(window).scroll ->
    if $(window).scrollTop() > $(document).height() — $(window).height() — 50
      alert("Final de la página")
-     */
+     */ 

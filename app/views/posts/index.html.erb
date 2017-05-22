@@ -29,11 +29,48 @@
         <div class="panel panel-primary">
           <!-- Panel heading -->
           <div class="panel-heading">
-          <%= link_to post do%>
-            <h4><%= post.titulo %></h4>
-          <% end %>
-            <!--code><%= time_ago_in_words(post.created_at) %> ago</code> por <strong><%= post.usuario.nickname%></strong-->
-            Hace <%= time_ago_in_words(post.created_at) %> por <strong><%= link_to post.usuario.nickname, post.usuario.nickname %></strong>
+          <% if usuario_signed_in? %>
+              <% if post.usuario_id == current_usuario.id %>
+            <div class="row container-fluid">
+              <div class="pull-right">
+                <div class="dropdown">
+                    <i class="fa fa-cogs  dropdown-toggle" id="post-actions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"">
+                      <span class="caret"></span>
+                    </i>
+                  <ul class="dropdown-menu" aria-labelledby="post-actions">
+                    <li>
+                      
+                    <%= link_to edit_post_path(post) do%> 
+                        <i class="fa fa-pencil"> Editar</i>
+                      <% end %>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      
+                      <%= link_to post, method: :delete, data: {confirm: "¿Estás seguro de borrar este post?"} do %>
+                        <i class="fa fa-trash"> Eliminar</i>
+                      <% end %>
+                    </li>
+                  </ul>
+                </div>
+
+
+
+              </div>            
+            </div>
+              <% end %>
+            <% end %>
+            <div class="row container-fluid">
+              <div class="pull-left">
+                <%= link_to post do%>
+                  <h4><%= post.titulo %></h4>
+                <% end %>                
+              </div>
+            </div>
+            <div class="row">
+                <!--code><%= time_ago_in_words(post.created_at) %> ago</code> por <strong><%= post.usuario.nickname%></strong-->
+                Hace <%= time_ago_in_words(post.created_at) %> por <strong><%= link_to post.usuario.nickname, post.usuario.nickname %></strong>            
+            </div>
           </div>
           <!-- end Panel heading -->
           <!-- Panel body -->
@@ -48,18 +85,19 @@
           <!-- Panel footer -->
           <div class="panel-footer">
             <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Me gusta</a>
-            <% if usuario_signed_in? %>
-              <% if post.usuario_id == current_usuario.id %>
-                <%= link_to edit_post_path(post) do%> 
-                  <i class="fa fa-pencil"> Editar</i>
-                <% end %>
-                <%= link_to post, method: :delete, data: {confirm: "¿Estás seguro de borrar este post?"} do %>
-                  <i class="fa fa-trash"> Eliminar</i>
-                <% end %>
+
+            <!--%= link_to posts_like_path, controller: "posts", action: "like", id: @post do%>
+              <button type="button" class="btn btn-primary" >Like! <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> </button>
+            < % end %-->
+            <!--%= link_to "Me gusta", { :action => "like" }%-->
+
+            <!--%= button_to 'Me gusta', {:controller => "posts", :id => post.id, :action => "like", params: { post_id: post.id}}, {:method=>:post}  %-->
+            
+            <% if !post.likes.nil? %>
+              <% if post.likes > 0 %>
+                <span class="pull-right"><i class="fa fa-diamond" aria-hidden="true"> <%= post.likes%></i><span>
               <% end %>
             <% end %>
-
-            <span class="pull-right"><i class="fa fa-diamond" aria-hidden="true"> <%= post.likes%></i><span>
           </div>
           <!-- End Panel footer -->
         </div>

@@ -10,9 +10,35 @@
 		<div class="col-md-12 col-md-offset-0">
 			<div class="panel panel-default">
 				<div class="panel-heading center">
+					<% if usuario_signed_in? %>
+              			<% if @post.usuario_id == current_usuario.id %>
+              			<div class="row container-fluid">
+					      <div class="pull-right">
+					        <div class="dropdown">
+					            <i class="fa fa-cogs  dropdown-toggle" id="post-actions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"">
+					              <span class="caret"></span>
+					            </i>
+					          <ul class="dropdown-menu post-actions" aria-labelledby="post-actions">
+					            <li>
+					              
+					            <%= link_to edit_post_path(@post) do%> 
+					                <i class="fa fa-pencil"> Editar</i>
+					              <% end %>
+					            </li>
+					            <!--li role="separator" class="divider"></li-->
+					            <li>
+					              
+					              <%= link_to @post, method: :delete, data: {confirm: "¿Estás seguro de borrar este post?"} do %>
+					                <i class="fa fa-trash"> Eliminar</i>
+					              <% end %>
+					            </li>
+					          </ul>
+					        </div>
+					      </div>            
+              			<% end %>
+            		<% end %>
 					<div class="row container-fluid post">
 						<h3><%= @post.titulo %></h3>
-						<br>
 						<br>
 		    	    	
 		    	    	<div class="pull-left">
@@ -20,7 +46,11 @@
 		    	    		<%= @post.usuario.nombre_completo%>
 		    	    		<% end %>
 		    	    	</div>	
+		    	    	<div class="pull-right">
+							<%= social_share_button_tag(@post.titulo, :allow_sites => %w(twitter facebook google_plus tumblr email linkedin)) %>
+						</div>
 					</div>
+				</div>
 				</div>
 
 			<div class="panel-body post">
@@ -32,22 +62,20 @@
             <div class="panel-footer">
             	<div class="row container-fluid">
 					<div class="pull-left">
-						<%= @post.updated_at %> 
+						<%= link_to posts_path do %>
+							<i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar | 
+						<%end%>
+						 <code><%= raw('Editado') if @post.created_at!=@post.updated_at %> <%= @post.updated_at.strftime("%d/%m/%Y a las  %I:%M%p") %></code>
 					</div>
 					<div class="pull-right">
-						<i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <%= @post.likes %>
+						<% if !@post.likes.nil? %>
+					      <% if @post.likes > 0 %>
+					        <span class="pull-right"><i class="fa fa-diamond" aria-hidden="true"> <%= @post.likes%></i><span>
+					      <% end %>
+					    <% end %>
 					</div>
 				</div>
-				<div class="row container-fluid">
-					<% if @post.usuario == current_usuario %>
-						<%= link_to edit_post_path(@post) do %> 
-						<i class="fa fa-pencil" aria-hidden="true"></i> Editar
-						<%end%>
-					<%end%>
-					<%= link_to posts_path do %>
-						<i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar
-					<%end%>
-				</div>
+				
 
 			</div>
             <!-- /.col-md-4 -->

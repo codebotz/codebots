@@ -53,15 +53,19 @@
 		<p>
 		¡Dale like a mi página en Facebook y sígueme en Twitah! (publico pura pendejada xD) ¡No te arrepentirás!
 		</p>
+		
+		<div class="center">
 			
 		<!-- Botones Twitter -->
 		<a href="https://twitter.com/intent/tweet?screen_name=DLVNGN_" class="twitter-mention-button" data-show-count="false">Tweet to @DLVNGN_</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 		<a href="https://twitter.com/DLVNGN_" class="twitter-follow-button" data-lang="es"  data-show-count="false">Follow @DLVNGN_</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-		<!-- Timeline Twitter -->
-		<a class="twitter-timeline"  data-chrome="nofooter"  width="100%" height="1000" href="https://twitter.com/DLVNGN_">Tweets by DLVNGN_</a> 
-		<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-		<!-- Termina Timeline Twitter -->
 
+		<% if current_page?(inicio_path) %>
+			<!-- Timeline Twitter -->
+			<a class="twitter-timeline"  data-chrome="nofooter"  width="100%" height="1000" href="https://twitter.com/DLVNGN_">Tweets by DLVNGN_</a> 
+			<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+			<!-- Termina Timeline Twitter -->
+		<% end %>
 		<div class="row">
 		<script src="https://apis.google.com/js/platform.js"></script>
 		<script>
@@ -79,6 +83,7 @@
 		<!-- Suscribir Youtube -->
 		<div class="g-ytsubscribe" data-channel="codebots.net" data-channelid="UC5poNV3aRdiGSA205v4o9jQ" data-layout="default" data-theme="dark" data-count="default" data-onytevent="onYtEvent"></div>
 		<!-- Video Nuevo Youtube -->
+		</div>
 		<iframe width="90%" height="315" style="margin-left:5%" src="https://www.youtube.com/embed/1UICdINzlXk" frameborder="0" allowfullscreen></iframe>
 		</div>                    
 	<!-- /Redes Sociales -->

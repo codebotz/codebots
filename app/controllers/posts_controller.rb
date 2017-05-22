@@ -58,6 +58,42 @@ class PostsController < ApplicationController
     Usuario.find(params[:id])
   end
 
+  #agregando funcion para dar like
+=begin
+  def like
+    if params[:post_id]
+      puts "aqui voy bien \n\n"
+    end
+    puts "#{params[:post_id]}"
+    respond_to do |format|
+      puts "Dando like\n\n"
+      post = Post.find(params[:post_id])
+      puts post.to_s
+      if addLike(post)
+        puts "agregue like"
+        format.html { redirect_to posts_path, notice: 'Has dado Like!.' }
+        format.json { render :show, status: :ok, location: post }
+      else
+        puts "error al agregar like"
+        format.html { render :show }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def addLike(post)
+    puts "metodo addLike:#{post.class}"
+=begin
+    puts "agregando like..id del post: #{post.id}\n\n\n\n\n\n"
+    puts "likes anterior: #{post.likes}"
+    post+= post
+    puts "likes actual: #{post}"
+    #post.update(post_params)
+
+true
+  end
+=end
+
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
@@ -76,6 +112,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:usuario_id, :titulo, :contenido, :likes)
+      params.require(:post).permit(:usuario_id, :titulo, :contenido, :likes, :id)
     end
 end

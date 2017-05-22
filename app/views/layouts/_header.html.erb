@@ -59,12 +59,16 @@
                         
                         <ul class="nav navbar-nav navbar-right pull-right hidden-xs">
                             <% if usuario_signed_in? %>
+                                <li>
+                                    <%= link_to home_path do %>
+                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i> <%= current_usuario.nickname %>
+                                    <% end %>
+                                </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">    
-                                         <i class="fa fa-user-circle-o" aria-hidden="false"></i> <%= current_usuario.nickname%> <span class="caret"></span>
+                                        <i class="fa fa-cogs" aria-hidden="true"></i> <span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><%= link_to raw('<i class="fa fa-diamond" aria-hidden="true"></i> Mi Perfil'), home_path %></li>
                                         <li><%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i> Editar cuenta'), edit_usuario_registration_path %></li>
                                         <li><%= link_to raw('<i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesion'), destroy_usuario_session_path, method: :delete %></li>
                                     </ul>
@@ -81,12 +85,16 @@
 
                         <ul class="nav navbar-nav navbar-right visible-xs">
                             <% if usuario_signed_in? %>
+                                <li>
+                                    <%= link_to home_path do %>
+                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i> <%= current_usuario.nickname %>
+                                    <% end %>
+                                </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">    
-                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i> <%= current_usuario.nickname%> <span class="caret"></span>
+                                        <i class="fa fa-cogs" aria-hidden="true"></i> <span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><%= link_to raw('<i class="fa fa-diamond" aria-hidden="true"></i> Mi Perfil'), home_path %></li>
                                         <li><%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i> Editar cuenta'), edit_usuario_registration_path %></li>
                                         <li><%= link_to raw('<i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesion'), destroy_usuario_session_path, method: :delete %></li>
                                     </ul>

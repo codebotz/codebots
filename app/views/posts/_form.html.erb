@@ -26,14 +26,9 @@
   <div class="field form-group">
     <%= f.label :contenido %>
     <p class="emoji-picker-container">
-      <%= f.text_field :contenido, class: 'form-control', data: { emojiable: true } %>
+      <%= f.text_area :contenido, class: 'form-control', data: { emojiable: true } %>
     </p>
     <!--%= f.text_area :contenido, class: 'form-control'  %-->
-  </div>
-
-  <div class="field form-group">
-    <%= f.label :likes %>
-    <%= f.number_field :likes, class: 'form-control'  %>
   </div>
 
   <div class="actions">

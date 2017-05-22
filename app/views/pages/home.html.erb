@@ -7,7 +7,16 @@
             </div>
             <!-- /.col-md-8 -->
             <div class="col-md-4">
-                <h1><%= @usuario.nombre_completo %><small> <%= @usuario.nickname %></small></h1>
+                <h1><%= @usuario.nombre_completo %><small> <%= @usuario.nickname %></small></h1><br>
+                <span class="usuario-datos">
+                  <%=  @usuario.created_at.strftime("Usuario desde: %d/%m/%Y")%><br>
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i> Post creados: <%=  @usuario.posts.count %><br>
+                  <i class="fa fa-users" aria-hidden="true"></i> Seguidores: <%=  @usuario.posts.count %><br>
+                </span>
+                <%= link_to home_path, class: "btn btn-small btn-primary" do %>
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i> Seguir                
+                <% end %>
+                <!--a class="btn btn-primary btn-md" href="#">Seguir contenido</a-->
                 <hr>
                 <!-- Descripción corta del perfil... Maximo 300 caracteres -->
                 <p>
@@ -16,7 +25,6 @@
                 <p>
                 ☯Sic parvis magna☯
                 </p>
-                <a class="btn btn-primary btn-md" href="#">Seguir contenido</a>
             </div>
             <!-- /.col-md-4 -->
         </div>
@@ -65,43 +73,80 @@
         <hr>
 
 
-<% if @posts%>
-<div class="row marketing">
+<% if @posts.size>0 %>
+<div id="bodypost" class="row marketing">
 <% @posts.each do |post| %>
   <div class="col-lg-6 clearfix">
     <div class="panel panel-primary">
       <!-- Default panel contents -->
       <div class="panel-heading">
-      <%= link_to post do%>
-        <h4><%= post.titulo %></h4>
-      <% end %>
-        <!--code><%= time_ago_in_words(post.created_at) %> ago</code> por <strong><%= post.usuario.nickname%></strong-->
-        <code>Hace <%= time_ago_in_words(post.created_at) %></code> por <strong><%= link_to post.usuario.nickname, post.usuario.nickname %></strong>
-      </div>
-      <div class="panel-body">
-        <p><%= truncate(post.contenido.html_safe, :length => 250) %></p>
-          <% if (post.contenido.length > 250) %>
-            <%= link_to "Ver más", post%>
+          <% if usuario_signed_in? %>
+              <% if post.usuario_id == current_usuario.id %>
+              <div class="row container-fluid">
+                <div class="pull-right">
+                  <div class="dropdown">
+                      <i class="fa fa-cogs  dropdown-toggle" id="post-actions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"">
+                        <span class="caret"></span>
+                      </i>
+                    <ul class="dropdown-menu post-actions" aria-labelledby="post-actions">
+                      <li>                              
+                        <%= link_to edit_post_path(post) do%> 
+                          <i class="fa fa-pencil"> Editar</i>
+                        <% end %>
+                      </li>
+                      <!--li role="separator" class="divider"></li-->
+                      <li>                              
+                        <%= link_to post, method: :delete, data: {confirm: "¿Estás seguro de borrar este post?"} do %>
+                          <i class="fa fa-trash"> Eliminar</i>
+                        <% end %>
+                      </li>
+                    </ul>
+                  </div>
+                </div>            
+              <% end %>
           <% end %>
+          </div>
+          <div class="row container-fluid post">
+            <%= link_to post do%>
+              <h4><%= post.titulo %></h4>
+            <% end %>
+            <br>
+              <div class="pull-left">
+                Hace <%= time_ago_in_words(post.created_at) %> por <%= link_to "/#{post.usuario.nickname}" do%>
+                <%= post.usuario.nombre_completo%>
+                <% end %>
+              </div>  
+          </div>
+        <!--code>< %= time_ago_in_words(post.created_at) %> ago</code> por <strong>< %= post.usuario.nickname%></strong-->
+        <!--code>Hace < %= time_ago_in_words(post.created_at) %></code> por <strong>< %= link_to post.usuario.nickname, post.usuario.nickname %></strong-->
       </div>
-      <div class="panel-footer">
-      <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Me gusta</a>
-      <% if usuario_signed_in? %>
-        <% if post.usuario_id == current_usuario.id %>
-          <%= link_to edit_post_path(post) do%> 
-            <i class="fa fa-pencil"> Editar</i>
-          <% end %>
-          <%= link_to post, method: :delete, data: {confirm: "¿Estás seguro de borrar este post?"} do %>
-            <i class="fa fa-trash"> Eliminar</i>
-          <% end %>
-        <% end %>
-      <% end %>
-      <span class="pull-right"><i class="fa fa-diamond" aria-hidden="true"> <%= post.likes%></i><span>
-      </div>
+          <div class="panel-body">
+            <p><%= truncate(post.contenido.html_safe, :length => 250) %></p>
+              <% if (post.contenido.length > 250) %>
+                <%= link_to "Ver más", post%>
+              <% end %>
+          </div>
+          <div class="panel-footer">
+            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Me gusta</a>
+            
+            <% if !post.likes.nil? %>
+              <% if post.likes > 0 %>
+                <span class="pull-right"><i class="fa fa-diamond" aria-hidden="true"> <%= post.likes%></i><span>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
 </div>
-<!--%= will_paginate @post %>
-<div class="clearfix visible-sm-block"></div-->
+<%= will_paginate @posts %>
+<!--div class="clearfix visible-sm-block"></div-->
+<% else %>
+  <div class="center">
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        <i class="fa fa-frown-o" aria-hidden="true"></i> Aún no tienes post, crea uno <%= link_to "Crear post", new_post_path, class: "btn btn-primary" %>        
+      </div>
+    </div>
+  </div>
 <%end%>
