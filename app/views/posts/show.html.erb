@@ -35,12 +35,12 @@
 					          </ul>
 					        </div>
 					      </div>            
+					     </div>            
               			<% end %>
             		<% end %>
 					<div class="row container-fluid post">
 						<h3><%= @post.titulo %></h3>
 						<br>
-		    	    	
 		    	    	<div class="pull-left">
 		    	    		Hace <%= time_ago_in_words(@post.created_at) %> por <%= link_to "/#{@post.usuario.nickname}" do%>
 		    	    		<%= @post.usuario.nombre_completo%>
@@ -51,12 +51,12 @@
 						</div>
 					</div>
 				</div>
-				</div>
+			</div>
 
 			<div class="panel-body post">
-                <%= content_with_emoji(@post.contenido) %>
+                <p><%= content_with_emoji(@post.contenido) %></p>
 	    	    <hr>
-		        <small>Comentarios</small>	
+		        <p>Comentarios</p>	
             </div>
 
             <div class="panel-footer">
@@ -75,11 +75,8 @@
 					    <% end %>
 					</div>
 				</div>
-				
-
 			</div>
             <!-- /.col-md-4 -->
         </div>
-</div>
-</div>
+	</div>
 </div>
