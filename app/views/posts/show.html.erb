@@ -4,11 +4,11 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="well">
+<div class="row marketing">
 	<!-- Heading Row -->    
-	<div class="row">
-		<div class="col-md-12 col-md-offset-0">
-			<div class="panel panel-default">
+	
+		<div class="container-fluid col-md-12 col-md-offset-0">
+			<div class="panel panel-primary">
 				<div class="panel-heading center">
 					<% if usuario_signed_in? %>
               			<% if @post.usuario_id == current_usuario.id %>
@@ -51,12 +51,11 @@
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="panel-body post">
+			<div class="panel-body">
                 <p><%= content_with_emoji(@post.contenido) %></p>
 	    	    <hr>
-		        <p>Comentarios</p>	
+		        <bold>Comentarios</bold>	
             </div>
 
             <div class="panel-footer">
@@ -78,5 +77,4 @@
 			</div>
             <!-- /.col-md-4 -->
         </div>
-	</div>
 </div>
