@@ -20,7 +20,7 @@
 }
 @font-face {
     font-family: "QUER";
-    src:url('QUER____.ttf');
+    src:url('QUER.ttf');
 }
 
 header, footer{
@@ -439,7 +439,7 @@ footer q {
 }
 
 .page-header{
-  color: #000;
+  color: #fff;
 }
 
 .panel-body{
@@ -447,9 +447,13 @@ footer q {
 }
 
 .panel-info{
-  background: #fff;
+  background: url('seigaiha.png') repeat;
   color: #000;
   border: 1px solid #ddd;
+}
+
+.panel-info .panel-body p{
+  color: #000;
 }
 
 .panel-default .panel-body {
@@ -570,17 +574,16 @@ footer q {
 }
 
 .tag{
-  background: #0f0c11;
-  color: #9d9d9d;
-  border-radius: .2em;
+  background: #cacaca;
+  color: #000;
+  border-radius: .4em;
   border-color: #ccc; 
-  margin:2px;
+  margin: 4px;
   padding: 1px;
 }
 
-
 .tag:hover{
-  background: rgba(52, 73, 94,1);
+  background: #000;
   color: rgb(0, 230, 118);
 }
 
