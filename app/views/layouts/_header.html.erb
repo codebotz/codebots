@@ -1,8 +1,8 @@
-<nav class="navbar navbar-default navbar-fixed-top navbar">
+<nav class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <%= link_to inicio_path, class: "navbar-brand" do %>
-                            <%= image_tag("brand.png", :alt => "codebots.net", class: "img-responsive", :style => "width:45px;padding-top:2px; margin-top:-20px;") %>
+                            <%= image_tag("sad-bot.png", :alt => "codebots.net", class: "img-responsive", :style => "width:40px;padding-top:2px; margin-top:-12px;") %>
                         <% end %>
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
                             <span class="sr-only">Menu</span>
@@ -15,7 +15,7 @@
                         <% end %>
                     </div>
                     
-                    <div class="collapse navbar-collapse" id="navbar-1">
+                    <div class="collapse navbar-collapse navbar-inverse" id="navbar-1">
                         <ul class="nav navbar-nav">
                         <!-- class="active" -->
                             <li>
@@ -39,7 +39,7 @@
                             </li>
                             <li>
                             <%= link_to timeline_path do %>
-                                <i class="fa fa-picture-o"></i><i class="fa fa-commenting-o"></i><span style="vertical-align: middle;"> Timeline</span>
+                                <i class="fa fa-commenting-o"></i><span style="vertical-align: middle;"> Posts</span>
                             <% end %>
                             </li>
                         </ul>

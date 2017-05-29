@@ -8,7 +8,7 @@
 	<!-- Heading Row -->    
 	
 		<div class="container-fluid col-md-12 col-md-offset-0">
-			<div class="panel panel-primary">
+			<div class="panel panel-default">
 				<div class="panel-heading center">
 					<% if usuario_signed_in? %>
               			<% if @post.usuario_id == current_usuario.id %>
@@ -64,7 +64,7 @@
 						<%= link_to posts_path do %>
 							<i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar | 
 						<%end%>
-						 <code><%= raw('Editado') if @post.created_at!=@post.updated_at %> <%= @post.updated_at.strftime("%d/%m/%Y a las  %I:%M%p") %></code>
+						 <code><%= raw('<i class="fa fa-pencil"></i>') if @post.created_at!=@post.updated_at %> <%= @post.updated_at.strftime("%d/%m/%Y a las  %I:%M%p") %></code>
 					</div>
 					<div class="pull-right">
 						<% if !@post.likes.nil? %>

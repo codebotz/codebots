@@ -2,17 +2,21 @@
 <br>
 <div class="panel panel-default">  
   <div class="panel-heading">
-    <h2>Timeline de usuarios</h2>
+    <div class="row container-fluid">
+      <div class="pull-left">
+        <h2>Posts de usuarios</h2>
+      </div>
+      <div class="pull-right">
+      <%= link_to new_post_path, class: "btn btn-primary btn-sm", alt: "Nuevo post" do%>
+        <i class="fa fa-plus-circle" aria-hidden="true"></i> Nuevo post
+      <% end %>
+    </div>
+    </div>
   </div>
   <div class="panel-body">
     <p></p>
   </div>
 
-  <div class="pull-right">
-    <%= link_to new_post_path, class: "btn btn-md btn-primary", alt: "Nuevo post" do%>
-      <i class="fa fa-plus" aria-hidden="true"> </i> Crear post
-    <% end %>
-  </div>
   <div class="center">
     <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
   </div>
@@ -22,11 +26,12 @@
     <!-- masonry -->
     <div class="grid-sizer"></div>
     <div class="container-fluid transitions-enabled centered clearfix masonry">
+
+    <br>
+    <div class="panel panel-primary">
     <% @posts.each do |post| %>
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        
+      <div class="col-lg-12 post">
       <!-- Panel primary -->
-        <div class="panel panel-primary">
           <!-- Panel heading -->
           <div class="panel-heading">
           <% if usuario_signed_in? %>
@@ -53,9 +58,6 @@
                     </li>
                   </ul>
                 </div>
-
-
-
               </div>            
             </div>
               <% end %>
@@ -102,8 +104,8 @@
           <!-- End Panel footer -->
         </div>
         <!-- end Panel primary -->
+      <% end %>
       </div>
-    <% end %>
     </div>
     <!-- end masonry -->
   <!--/div-->
