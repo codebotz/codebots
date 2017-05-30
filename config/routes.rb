@@ -9,20 +9,22 @@ Rails.application.routes.draw do
   get 'inicio', to: 'pages#inicio', as: :inicio
 
   devise_scope :usuario do
-  	get 'registrar', to: 'devise/registrations#new', as: :registrar	
-  	get 'iniciar', to: 'devise/sessions#new', as: :iniciar
-  	get 'cerrar', to: 'devise/sessions#destroy', as: :cerrar
+    get 'registrar', to: 'devise/registrations#new', as: :registrar 
+    get 'iniciar', to: 'devise/sessions#new', as: :iniciar
+    get 'cerrar', to: 'devise/sessions#destroy', as: :cerrar
   end
+
 
   resources :posts
     get 'timeline', to: 'posts#index', as: :timeline
     root to: 'posts#inedex'
 
+    #Para mostrar los resultados de búsqueda
+    get 'busqueda', to: 'pages#search', as: :busqueda
     #Para ir a perfil propio
     get 'home', to: 'pages#home'
     #Para mostrar el perfil del usuario
     get '/:id', to: 'pages#show'
-
 
     post 'posts/like', to: 'posts#like'
 

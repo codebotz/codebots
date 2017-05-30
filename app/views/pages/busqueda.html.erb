@@ -1,0 +1,40 @@
+<br>
+<br>
+<br>
+<div class="jumbotron">
+  <h1>Búsqueda!</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+
+
+<hr>
+<br>
+<h2>Resultados para <i>"<%= @busqueda %>"</i></h2>
+<br>
+<h4>Usuarios encontrados: <%= @rusuarios.size %></h4>
+<% if @rusuarios.size > 0 %>
+	<%= @rusuarios.each do |usuario|  %>
+		<p><%= usuario.nombre_completo %>.<%= link_to "/#{usuario.nickname}" do %>
+			<small><%= usuario.nickname %></small>
+			<% end %>
+		</p>
+		<hr>
+	<% end %>
+<% end %>
+
+<br>
+<% if @rposts.size > 0 %>
+	<h4>Posts encontrados: <%= @rposts.size %></h4>
+	<%= @rposts.each do |post|  %>
+		<%= link_to post do %>
+			<h5><%= post.titulo %>.</h5>
+		<% end %>
+		
+		<small><%= content_with_emoji(truncate(post.contenido.html_safe, :length => 250)) %></small>
+		<% if (post.contenido.length > 250) %>
+		  <%= link_to "Ver más", post%>
+		<% end %>
+		<hr>
+	<% end %>
+<% end %>

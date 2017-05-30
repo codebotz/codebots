@@ -25,4 +25,16 @@ class PagesController < ApplicationController
   	 	render file: 'public/404', status: 404, formats: [:html]
   	 end 
   end
+
+  #Se mostrarán los usuarios, artículos y posts que contengan la palabra de búsqueda
+  def search
+
+    @busqueda = params[:busqueda]
+    puts "\n\n\n\n\n\nIngreso al metodo de búsqueda..."
+    #@busqueda = "rubin"
+    @rusuarios = Usuario.where("nickname like ?", "%#{@busqueda}%")
+    @rposts = Post.where("titulo like ?", "%#{@busqueda}%")
+    render :busqueda
+  end
+
 end
