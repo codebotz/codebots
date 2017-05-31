@@ -32,7 +32,7 @@ class PagesController < ApplicationController
     @busqueda = params[:busqueda]
     puts "\nIngreso al metodo de búsqueda..."
     @rusuarios = Usuario.where("nickname like ?", "%#{@busqueda.downcase}%")
-    @rposts = Post.where("titulo like ?", "%#{@busqueda.downcase}%")
+    @rposts = Post.where("titulo like ?", "%#{@busqueda.downcase}%").order(created_at: :desc)
     #.paginate(:page => params[:page], :per_page => 10)
     render :busqueda
   end
