@@ -8,7 +8,7 @@
 	<div class="panel-body">
 		
 		<br>
-		<h4>Usuarios encontrados: <%= @rusuarios.size %></h4>
+		<h4 class="h4class">Usuarios encontrados: <%= @rusuarios.size %></h4>
 		<% if @rusuarios.size > 0 %>
 			<%= @rusuarios.each do |usuario|  %>
 				<p><%= usuario.nombre_completo %>.<%= link_to "/#{usuario.nickname}" do %>
@@ -20,7 +20,7 @@
 		<% end %>
 
 		<br>
-		<h4>Posts encontrados: <%= @rposts.size %></h4>
+		<h4 class="h4class">Posts encontrados: <%= @rposts.size %></h4>
 		<% if @rposts.size > 0 %>
 			<%= @rposts.each do |post|  %>
 				<%= link_to post do %>
@@ -35,7 +35,7 @@
 			<% end %>
 		<% end %>
 	</div>
-	
+
 	<div class="panel-footer">
 		<!--%= will_paginate @rposts, renderer: BootstrapPagination::Rails %-->
 	</div>
