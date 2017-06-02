@@ -38,18 +38,13 @@
                                 </ul>
                             </li>
                             <li>
-                            <%= link_to busqueda_path do %>
-                                <i class="fa fa-search"></i><span style="vertical-align: middle;"> Busqueda</span>
-                            <% end %>
-                            </li>
-                            <li>
                             <%= link_to timeline_path do %>
                                 <i class="fa fa-commenting-o"></i><span style="vertical-align: middle;"> Posts</span>
                             <% end %>
                             </li>
                         </ul>
                         
-                        <form action="/busqueda"  method="get" class="navbar-form pull-left hidden-xs hidden-sm" role="search">
+                        <form action="/busqueda"  method="post" class="navbar-form pull-left hidden-xs" role="search">
                             <div class="form-group">
                                 <input type="text" name="busqueda" id="busqueda" class="form-control" placeholder="Buscar" />
                             </div>

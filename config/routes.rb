@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     root to: 'posts#inedex'
 
     #Para mostrar los resultados de búsqueda
-    get 'busqueda', to: 'pages#search', as: :busqueda
+    post 'busqueda', to: 'pages#search', as: :busqueda
     #Para ir a perfil propio
     get 'home', to: 'pages#home'
     #Para mostrar el perfil del usuario

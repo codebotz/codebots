@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-
+  skip_before_filter :verify_authenticity_token #Para usar metodo post
   before_action :authenticate_usuario!, except: [:index,:show,:miperfil,:inicio]
 	#Metodo para cuando se da cilck en ir a perfil(propio)
   def home
