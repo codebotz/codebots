@@ -6,7 +6,6 @@ $ ->
         $('.pagination').text("Mostrando más posts...")
         $.getScript(url)
     $(window).scroll()
-
 $ ->
   #nav
   closeSearch = ->
