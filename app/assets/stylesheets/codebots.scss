@@ -730,8 +730,8 @@ margin-right: 7px;
 }
 
 
-
-/* 
+/*https://bootsnipp.com/snippets/featured/inline-navbar-search*/
+/* created with Sass*/
 .navbar-default {
   background: #0e0e10;
   border: 3px double #0a0a00;
@@ -767,10 +767,8 @@ margin-right: 7px;
   -ms-transition: .5s all; }
   .BB-nav li a:hover {
     color: wheat !important; }
-*/
-/*reset */
 
-/*
+/*reset */
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
@@ -790,9 +788,8 @@ margin-right: 7px;
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   border: none; }
-*/
+
 /* search Form ****/
-/*
 .navbar-nav > li > form {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -825,12 +822,8 @@ margin-right: 7px;
 #search-nav input{
   box-shadow: none;
   color: wheat;
+  /*border: 1px solid rgba(44, 62, 80,1.0); */
   border-radius: 2px;
   background: #1c1c21;
   opacity: 1;
 }
-
-.mods{
-
-}
-*/
