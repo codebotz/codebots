@@ -1,45 +1,46 @@
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation" id="BB-nav">
         <div class="container-fluid">
             <div class="container-fluid nav-container">
-                    <div class="navbar-header">
-                        <!-- % = link_to inicio_path, class: "navbar-brand" do %-->
-                            <!-- % = image_tag("sad-bot.png", :alt => "codebots.net", class: "img-responsive", :style => "width:40px;padding-top:2px; margin-top:-12px;") % -->
-                        <!--%end%-->
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".BB-nav">
-                                <span class="sr-only">Menu</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        <%= link_to inicio_path, class: "navbar-brand codebots" do %>
-                            codebots.<small>net</small>
-                        <% end %>
-                    </div>
-
-                <ul id="menu-menu" class="nav navbar-nav BB-nav collapse navbar-collapse">
-                    <li>
-                    <%= link_to inicio_path do %>
-                            <i class="fa fa-home"></i><span style="vertical-align: middle;"> Inicio</span>
+                <div class="navbar-header">
+                    <!-- % = link_to inicio_path, class: "navbar-brand" do %-->
+                        <!-- % = image_tag("sad-bot.png", :alt => "codebots.net", class: "img-responsive", :style => "width:40px;padding-top:2px; margin-top:-12px;") % -->
+                    <!--%end%-->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
+                        <span class="sr-only">Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <%= link_to inicio_path, class: "navbar-brand codebots" do %>
+                        codebots.<small>net</small>
                     <% end %>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-code"></i><span style="vertical-align: middle;"> Tutoriales </span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Ruby</a></li>
-                            <li><a href="#">Java</a></li>
-                            <li><a href="#">Testing</a></li>
-                            <li><a href="#">Web</a></li>
-                            <li class="divider"><a href="#"></a></li>
-                            <li><a href="#">Todos</a></li>
+                </div>
+            <div class="collapse navbar-collapse navbar-inverse" id="navbar-1">
+                <ul class="nav navbar-nav">
+                        <!-- class="active" -->
+                            <li>
+                            <%= link_to inicio_path do %>
+                                    <i class="fa fa-home"></i><span style="vertical-align: middle;"> Inicio</span>
+                                <% end %>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="fa fa-code"></i><span style="vertical-align: middle;"> Tutoriales </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Ruby</a></li>
+                                    <li><a href="#">Java</a></li>
+                                    <li><a href="#">Testing</a></li>
+                                    <li><a href="#">Web</a></li>
+                                    <li class="divider"><a href="#"></a></li>
+                                    <li><a href="#">Todos</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                            <%= link_to timeline_path do %>
+                                <i class="fa fa-commenting-o"></i><span style="vertical-align: middle;"> Posts</span>
+                            <% end %>
+                            </li>
                         </ul>
-                    </li>
-                    <li>
-                    <%= link_to timeline_path do %>
-                        <i class="fa fa-commenting-o"></i><span style="vertical-align: middle;"> Posts</span>
-                    <% end %>
-                    </li>
-                </ul>  
                 
                 <ul class="nav navbar-nav navbar-right nav-pills hidden-xs">
                         <li class="li-form">
@@ -49,12 +50,12 @@
 
                             <button type="reset">
                                     <span class="fa fa-close">
-                                        <span class="sr-only">Close</span>
+                                        <span class="sr-only">Cerrar</span>
                                     </span>
                             </button>
                             <button type="submit" class="search-submit">
                                     <span class="fa fa-search">
-                                        <span class="sr-only">Rechercher</span>
+                                        <span class="sr-only">Buscar</span>
                                     </span>
                             </button>
                         </form>               
@@ -82,7 +83,42 @@
                             </li>
                         <%end%>
                 </ul>
+
+                <ul class="nav navbar-nav navbar-right visible-xs">
+                    <form action="/busqueda"  method="post" class="navbar-form visible-xs" role="search">
+                        <div class="form-group">
+                            <input type="text" name="busqueda" id="busqueda" class="form-control" placeholder="Buscar" />
+                        </div>
+                    </form>
+                
+
+                    <% if usuario_signed_in? %>
+                            <li>
+                                <%= link_to home_path do %>
+                                    <i class="fa fa-user-circle-o" aria-hidden="true"></i> <%= current_usuario.nickname %>
+                                <% end %>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">    
+                                    <i class="fa fa-cogs" aria-hidden="true"></i> 
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i> Editar cuenta'), edit_usuario_registration_path %></li>
+                                    <li><%= link_to raw('<i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesion'), destroy_usuario_session_path, method: :delete %></li>
+                                </ul>
+                            </li>
+                        <% else %>
+                            <li>
+                                <%= link_to iniciar_path do %>
+                                    <i class="fa fa-sign-in"></i><span style="vertical-align: middle;"> Iniciar sesion</span>
+                                <% end %>
+                            </li>
+                        <%end%>
+                </ul>
             </div>
+
+            </div>
+
         </div>
     <!-- /NAV -->
     </nav>  
