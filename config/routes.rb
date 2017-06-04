@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :estados
   get 'perfil/show'
 
   devise_for :usuarios

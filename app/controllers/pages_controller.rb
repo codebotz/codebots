@@ -30,7 +30,7 @@ class PagesController < ApplicationController
   #https://rubyplus.com/articles/3381-Simple-Search-Form-in-Rails-5
   def search
     respond_to do |format| 
-      if params[:busqueda].strip != ""
+      if params[:busqueda].strip != "" #si hay solo espacios no busca nada
         @busqueda = params[:busqueda]
         puts "\nIngreso al metodo de búsqueda..."
         @rusuarios = Usuario.where("nickname like ?", "%#{@busqueda.downcase}%")
