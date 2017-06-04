@@ -31,3 +31,4 @@ $(function(){
    if $(window).scrollTop() > $(document).height() — $(window).height() — 50
      alert("Final de la página")
      */ 
+

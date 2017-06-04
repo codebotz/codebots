@@ -29,12 +29,18 @@ class PagesController < ApplicationController
   #Se mostrarán los usuarios, artículos y posts que contengan la palabra de búsqueda
   #https://rubyplus.com/articles/3381-Simple-Search-Form-in-Rails-5
   def search
-    @busqueda = params[:busqueda]
-    puts "\nIngreso al metodo de búsqueda..."
-    @rusuarios = Usuario.where("nickname like ?", "%#{@busqueda.downcase}%")
-    @rposts = Post.where("titulo like ?", "%#{@busqueda.downcase}%").order(created_at: :desc)
-    #.paginate(:page => params[:page], :per_page => 10)
-    render :busqueda
+    respond_to do |format| 
+      if params[:busqueda].strip != ""
+        @busqueda = params[:busqueda]
+        puts "\nIngreso al metodo de búsqueda..."
+        @rusuarios = Usuario.where("nickname like ?", "%#{@busqueda.downcase}%")
+        @rposts = Post.where("titulo like ?", "%#{@busqueda.downcase}%").order(created_at: :desc)
+        #.paginate(:page => params[:page], :per_page => 10)
+        format.html { render :busqueda }
+      else
+        format.html { render :inicio, success: 'Por favor ingresa una palabara para la búsqueda.' }
+      end
+    end
   end
 
 end

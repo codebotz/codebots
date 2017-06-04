@@ -132,18 +132,39 @@ aside{
     font-size: 1.1em;
     padding-bottom: 15px;
     padding-top: 15px;
+    color: #d8729c;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #d8729c;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+    color: wheat;
+}
+
+.navbar li a{
+  color: #d8729c; 
+}
+
+#navbar li a:hover{
+  color: wheat; 
 }
 
 .dropdown-menu > li > a {
     font-family: Phino;
     font-size: 1.1em;
     clear: both;
-    color: #333;
+    color: #d8729c;
     display: block;
     font-weight: 400;
     line-height: 1.42857;
     padding: 3px 20px;
     white-space: nowrap;
+}
+
+.dropdown-menu > li > a:hover{
+    color: #000;
 }
   .navbar-inverse{
     background:  #0e0e10;
@@ -707,3 +728,111 @@ border-left-color: #2dcb73;
 .status-upload form button > i {
 margin-right: 7px;
 }
+
+
+
+/* created with Sass*/
+.navbar-default {
+  background: #0e0e10;
+  border: 3px double #0a0a00;
+  border-radius: 0;
+  border-left: none;
+  border-right: none; 
+  color: #eee;
+}
+
+/*
+#BB-nav.affix {
+  position: fixed;
+  top: 0px;
+  -webkit-transition: top 0.5s ease-in;
+  transition: top 0.5s ease-out; }
+*/
+
+#BB-nav {
+  width: 100%;
+  background: #0e0e10;
+  z-index: 999;
+  }
+  #BB-nav .dropdown-menu {
+    background: #121217;
+    border: none; }
+
+.BB-nav li a {
+  font-size: 1.04em;
+  padding-right: 20px;
+  padding-left: 20px;
+  display: inline-block;
+  width: 100%;
+  text-align: justify;
+  text-transform: uppercase;
+  color: #d8729c !important;
+  
+  transition: .5s all;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+  -o-transition: .5s all;
+  -ms-transition: .5s all; }
+  .BB-nav li a:hover {
+    color: wheat !important; }
+
+/*reset */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-color: transparent;
+  color: #2980b9 !important; }
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.dropdown-menu a {
+  background-color: transparent; 
+}
+
+.dropdown-menu li a:hover{
+  color: #000 !important;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border: none; }
+
+/* search Form ****/
+.navbar-nav > li > form {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px; }
+
+@media (min-width: 768px) {
+  .navbar-nav > li > form {
+    padding-top: 15px;
+    padding-bottom: 15px; } }
+
+#search-nav input, #search-nav button[type="reset"] {
+  display: none;
+}
+
+#search-nav input, #search-nav button {
+  border-radius: 0px;
+  border-width: 0px;
+  color: #ccc;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  vertical-align: bottom;
+  top: 2px;
+  outline: none; }
+
+#search-nav .search-submit {
+  position: relative;
+  bottom: 2px; }
+
+#search-nav input{
+  box-shadow: none;
+  color: wheat;
+  /*border: 1px solid rgba(44, 62, 80,1.0); */
+  border-radius: 2px;
+  background: #1c1c21;
+  opacity: 1;
+}
+

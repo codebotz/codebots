@@ -2,7 +2,7 @@
 <br>
 <div class="panel panel-primary">
 	<div class="panel-heading">
-		<h2>Resultados para <i>"<%= @busqueda %>"</i></h2>
+		<h2>Resultados para <i style="color: wheat;">"<%= @busqueda %>"</i></h2>
 	</div>
 
 	<div class="panel-body">
@@ -11,8 +11,8 @@
 		<h4 class="h4class"  style="color: wheat">Usuarios encontrados: <%= @rusuarios.size %></h4>
 		<% if @rusuarios.size > 0 %>
 			<%= @rusuarios.each do |usuario|  %>
-				<p><%= usuario.nombre_completo %>.<%= link_to "/#{usuario.nickname}" do %>
-					(<%= usuario.nickname %>)
+				<p><%= usuario.nickname %>.<%= link_to "/#{usuario.nickname}" do %>
+					(<%= usuario.nombre_completo %>)
 					<% end %>
 				</p>
 				<hr>
