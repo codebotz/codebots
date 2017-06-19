@@ -5,7 +5,7 @@
                 <%= image_tag("900x350.png", :alt => "Portada Default", class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %>
             </div>
             <!-- /.col-md-8 -->
-            <div class="col-md-12 col-sm-12 col-lg-4">
+            <div class="col-md-4 col-sm-12 col-lg-4">
                 <h1><%= @usuario.nombre_completo %><small> <%= @usuario.nickname %></small></h1><br>
                 <span class="usuario-datos">
                   <%=  @usuario.created_at.strftime("Usuario desde: %d/%m/%Y")%><br>
@@ -44,7 +44,6 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-
         <!-- Content Row -->
         <div class="row">
             <div class="col-md-4">

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
 
   resources :posts
-    get 'timeline', to: 'posts#index', as: :timeline
+    get 'foro', to: 'posts#index', as: :foro
     root to: 'posts#inedex'
 
     #Para mostrar los resultados de búsqueda
@@ -28,7 +28,10 @@ Rails.application.routes.draw do
     get '/:id', to: 'pages#show'
 
     post 'posts/like', to: 'posts#like'
-
+  
+    #Configuración para enviar a 404 si url no existe
+    get '*path', to: 'pages#not_found', via: :all
+    
     
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

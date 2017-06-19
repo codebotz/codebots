@@ -826,4 +826,23 @@ margin-right: 7px;
   border-radius: 2px;
   background: #1c1c21;
   opacity: 1;
+  padding: 1px;
+}
+
+
+.modal-backdrop.in {
+  opacity: 0.1;
+  filter: alpha(opacity=50);
+}
+.modal-d{
+  color: rgba(231, 76, 60,1.0);  
+}
+.modal-i{
+  color: rgba(52, 152, 219,1.0);  
+}
+.modal-s{
+  color: rgba(46, 204, 113,1.0);  
+}
+.modal-w{
+  color: #E5FF00;  
 }

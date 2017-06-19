@@ -26,33 +26,47 @@
     <!--%= render :partial => 'flash', :flash => flash %-->
 
 
-<div class="row">
-  <div class="container">
-    <% flash.each do |type, message| %>
-      <!-- modificar para que solo envie un mensaje -->
-      <% if flash[:notice] %>
+  <!--div class="container">
+    < % flash.each do |type, message| %>
+      < % if flash[:notice] %>
         <div class="alert alert-success alert-dismissable">
           <button type="button" class="close" data-dismiss="alert" aria-hiden="true">x</button>
-          <%= flash[:notice]%>
+          < %= flash[:notice]%>
         </div>
-      <%end%>
+        <div class="modal fade" id="flashModal" role="dia class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title modal-s">Post Creado</h4>
+              </div>
+              <div class="modal-body">
+                <p>< %= flash[:notice]%></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      < %end%>
 
-      <% if flash[:alert] %>
+      < % if flash[:alert] %>
         <div class="alert alert-danger alert-dismissable">
           <button type="button" class="close" data-dismiss="alert" aria-hiden="true">x</button>
-          <%= flash[:alert]%>
+          < %= flash[:alert]%>
         </div>
-      <%end%>
+      < %end%>
 
       
-      <!--div class="alert <%= flash_class type %> alert-dismissable">
+      <div class="alert < %= flash_class type %> alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hiden="true">x</button>
-        <%= message %>
-      </div-->
-    <%end%>      
-  </div>
-</div>
+        < %= message %>
+      </div>
+    < %end%>      
+  </div-->
 
+  <%= render 'layouts/flash' %>
 
       <section class="col-xs-12 col-sm-8 col-md-7 col-md-offset-1">
           <%= yield %>

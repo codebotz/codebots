@@ -3,7 +3,7 @@
 @import "social-share-button";
 
 $input-color: #000;
-$carousel-caption-color:  #1ed6e2;
+$carousel-caption-color: #1ed6e2;
 $kbd-bg: #6a1a3b;
 $body-bg:  #1c2833;
 $btn-primary-color: #000; 
@@ -26,10 +26,12 @@ $pagination-border: #2a2a2a;
 $pagination-active-color: #000;
 $pagination-active-bg: #2ecc71;
 $pagination-hover-color: #000;
+$modal-content-bg: #0e0e10;
+$modal-content-border-color: #243641 ;
 
 $grid-gutter-width: 6px;
 
-@import 'codebots.scss';
+/*@import 'codebots.scss';*/
 @import 'bootstrap';
 
 .center{

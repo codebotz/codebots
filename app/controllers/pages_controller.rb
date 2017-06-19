@@ -43,4 +43,9 @@ class PagesController < ApplicationController
     end
   end
 
+  #Metodo cuando ponen una url que no esta en un path creado por el admin
+  def not_found
+    render file: 'public/404', status: 404, formats: [:html]
+  end
+
 end

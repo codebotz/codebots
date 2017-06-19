@@ -1,1 +1,26 @@
-<div id='flash-notice'><%= flash[:notice] %> <%= link_to_function 'Close', visual_effect(:fade, 'flash-notice' %></div>
+<div class="container">
+    <% flash.each do |type, message| %>
+       <div class="modal fade" id="flashModal" role="dia class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title modal-s">Post Creado</h4>
+          </div>
+          <div class="modal-body">
+            <p><%= message %></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+
+      <% if flash[:alert] %>
+        <div class="alert alert-danger alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hiden="true">x</button>
+          <%= flash[:alert]%>
+        </div>
+      <%end%>
+
+    <%end%>      
+</div>
