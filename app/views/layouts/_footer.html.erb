@@ -61,7 +61,7 @@
 
 					<!-- Sección de  Mejores Post SM MD LG-->
 					<section class="hidden-xs row col-sm-6 col-md-5 col-md-offset-0">
-							<div class="col-md-6 col-md-offset-0 col-sm-offset-0  col-lg-offset-0">
+							<!--div class="col-md-6 col-md-offset-0 col-sm-offset-0  col-lg-offset-0">
 								<a href="#"><h5><i class="fa fa-comments-o"></i> Comparar imágenes con JuxtaposeJS</h5></a>
 								<q>Si te gusta realizar comparaciones entre imágenes, ¡esta librería es perfecta para tí! Con Juxtapos...</q>
 							</div>
@@ -79,7 +79,16 @@
 							<div class="col-md-6">
 								<a href="#"><h5><i class="fa fa-comments-o"></i> Pruebas de Softwre</h5></a>
 								<q>En México, cada vez las Pruebas de Software están tomando más importancia dentro de las empresas ...</q>
-							</div>
+							</div-->
+							<% @marticulos.each do |marticulo|%>
+								<div class="col-md-6 col-md-offset-0 col-sm-offset-0  col-lg-offset-0">
+									<%= link_to marticulo do %>
+										<h5><i class="fa fa-comments-o"></i><%= marticulo.titulo %></h5></a>
+										<q><%= truncate(marticulo.intro, :length => 100)%></q>
+									<% end %>
+								</div>
+							<% end %>
+
 					<!-- /Sección de Mejores Post -->
 					</section>
 				<!-- /Fila p/Contenido -->

@@ -1,0 +1,155 @@
+<br />
+<br />
+<br />
+<!-- Begin Body -->
+	<div class="container-fluid">
+		<div class="no-gutter row">
+			<!-- left side column -->
+			<div class="col-md-3 padd0">
+				<div class="panel panel-default" id="sidebar">
+					<div class="panel-heading" style="background-color:#000;color:#fff;">Temas de Interés</div> 
+					<div class="panel-body">
+					<ul class="nav nav-stacked">
+						<li><a href="#">Bootstrap</a></li>
+						<li><a href="#">Java</a></li>
+						<li><a href="#">Ruby</a></li>
+						<li><a href="#">Testing</a></li>
+						<li><a href="#">Video Jugeos</a></li>
+						<li><a href="#">Tecnología</a></li>
+					</ul>
+					<div class="accordion" id="accordion2">
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+									Haz clic acá ;)
+								</a>
+							</div>
+							<div id="collapseOne" class="accordion-body collapse in">
+								<div class="accordion-inner">
+									Content here for links, ads, etc.. 
+								</div>
+							</div>
+						</div>
+						<div class="accordion-group">
+								<div class="accordion-heading">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+										Sitios de Utilidad
+									</a>
+								</div>
+								<div id="collapseTwo" class="accordion-body collapse">
+									<div class="accordion-inner">
+									 	<a>github.com</a>
+										<a>stackoverflow.com</a>
+										<a>chachigonzales.com</a>
+										<a>dlvngn.com</a>
+									</div>
+								</div>
+							</div>
+					</div><!--/acc-->
+					  
+					  <hr>
+
+					<div class="col col-span-12">
+					  <a href="https://www.facebook.com/codebots.net/"><i class="icon-2x fa fa-facebook-official"></a></i>&nbsp;
+					  <a href="https://twitter.com/DLVNGN_"><i class="icon-2x fa fa-twitter"></i></a>&nbsp;
+					  <a href="https://mx.linkedin.com/in/m-jafet-zárate-a5a5207a"><i class="icon-2x fa fa-linkedin"></i></a>&nbsp;
+					  <a href="https://www.youtube.com/channel/UCeZpdVQhMDr_xOicmebEZew"><i class="icon-2x fa fa-youtube"></i></a>&nbsp;
+					  <a href="https://github.com/rubinmz"><i class="icon-2x fa fa-github-alt"></a></i>&nbsp;
+					</div>
+					
+					</div><!--/panel body-->
+			  </div><!--/panel-->
+			</div><!--/end left column-->
+				
+			
+			<!-- right content column-->
+			<div class="col-md-8 padd0" id="content">
+				<div class="panel panel-info">
+				<div class="panel-heading" style="background-color:#111;color:#fff;">Publicado por: <a href="#"><code>DLVNGN</code></a> <%= @articulo.updated_at.strftime("%b %d %Y, %I:%M %p") %></div>   
+				<div class="panel-body">
+				  <div class="row ">
+				  <div class="col col-sm-12">
+				  	<%= image_tag(@articulo.imagen_previa, class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %>
+				  </div>   
+				  <div class="col-md-12">
+					<h2><%= @articulo.titulo %>.</h2>
+					<p><%= @articulo.intro %></p>
+					<br>
+				  </div> 
+				</div>
+				<hr>
+				  
+				<div class="row">
+					<div class="col-md-12" id="content">
+						<p><%=raw @articulo.contenido %></p>
+					<hr>						
+				
+				  <div class="well text-center"> 
+					<h1>Centered Text</h1>
+					This was a 2.x challenge that seems a little easier in 3.
+					<br><br>
+					<div style="font-size:70pt">
+					  <i class="fa fa-camera"></i>
+					  <i class="fa fa-desktop"></i>
+					  <i class="fa fa-gg"></i>
+					</div>
+				  </div>
+					<br><br>
+				  
+				  
+				  <% @artrand.each do |a| %>
+					  <%= link_to a do %>
+					  	<h2><%= a.titulo %></h2>
+					  	<%= image_tag(a.imagen_previa, class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %>					  
+					  <%end%>
+					  <%= truncate(a.intro, :length => 150) %>
+					  <br><br>
+					  <%= link_to a do %>
+					  	<button class="btn btn-default">Ver más</button>
+				  	  <%end%>
+				  <%end%>
+				  
+				  <hr>
+				  
+				  <% @artimg.each do |a| %>
+				   <div class="row">
+					<div class="col-md-6">
+					  <%= link_to a do %><%= image_tag(a.imagen_previa, class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %><%end%>
+					</div> 
+					<div class="col-md-6">
+					  <%= link_to a do %><h1><%= a.titulo %>.</h1><%end%>
+					</div>   
+				  </div>
+				  <%end%>
+				  
+				  <hr>
+				  <div class="row">
+				  <% @gridarticulos.each do |garticulo| %>
+
+					<div class="col-md-3 col-sm-6 col-6">
+					  <%= link_to garticulo do %>
+						<%= image_tag(garticulo.imagen_previa, class: "img-responsive img-portfolio img-hover", :style => "width:100%;", :alt => garticulo.titulo, :title => garticulo.titulo) %>
+					  <% end %>
+					</div>
+				  <%end%>
+				  </div>
+				  <br>
+				  <!--div class="row">
+					<div class="col-md-3 col-sm-6 col-6">
+					  <a href="#"><img src="../img/Kenass.jpg" class="img-responsive"></a>
+					</div>
+					<div class="col-md-3 col-sm-6 col-6">
+					  <a href="#"><img src="../img/Vegeta.jpg" class="img-responsive"></a>
+					</div>
+					<div class="col-md-3 col-sm-6 col-6">
+					  <a href="#"><img src="../img/Vegeta.jpg" class="img-responsive"></a>
+					</div>
+					<div class="col-md-3 col-sm-6 col-6">
+					  <a href="#"><img src="../img/Kenass.jpg" class="img-responsive"></a>
+					</div>
+				  </div-->
+				  <hr>
+				  </div><!--/panel-body-->
+				</div><!--/panel-->
+				<!--/end right column-->
+			</div> 

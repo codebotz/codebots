@@ -5,37 +5,52 @@
 		<h2>Resultados para <i style="color: wheat;">"<%= @busqueda %>"</i></h2>
 	</div>
 
-	<div class="panel-body">
-		
-		<br>
-		<h4 class="h4class"  style="color: wheat">Usuarios encontrados: <%= @rusuarios.size %></h4>
-		<% if @rusuarios.size > 0 %>
-			<%= @rusuarios.each do |usuario|  %>
-				<p><%= usuario.nickname %>.<%= link_to "/#{usuario.nickname}" do %>
-					(<%= usuario.nombre_completo %>)
-					<% end %>
-				</p>
-				<hr>
-			<% end %>
-		<% end %>
+	<% if @rusuarios.size == 0 && @rarticulos.size == 0%>
+		<div id="sinresultados" class="panel-body">
+			<h4 class="h4class"  style="color: wheat">No se encontraron registros <i class="fa fa-frown-o"></i></h4>
+		</div>
 
-		<br>
-		<h4 class="h4class" style="color: wheat">Posts encontrados: <%= @rposts.size %></h4>
-		<% if @rposts.size > 0 %>
-			<%= @rposts.each do |post|  %>
-				<%= link_to post do %>
-					<h5><%= post.titulo %>.</h5>
-				<% end %>
-				
-				<p><small><%= content_with_emoji(truncate(post.contenido.html_safe, :length => 250)) %></small></p>
-				<% if (post.contenido.length > 250) %>
-				  <%= link_to "Ver más", post%>
-				<% end %>
-				<hr>
-			<% end %>
-		<% end %>
-	</div>
+	<% else %>
 
+		<div id="resultados" class="panel-body">		
+			<% if @rusuarios.size > 0 %>
+			<h4 class="h4class"  style="color: wheat">Usuarios encontrados: <%= @rusuarios.size %></h4>
+				<% @rusuarios.each do |usuario|  %>
+					<p><%= usuario.nickname %>.<%= link_to "/#{usuario.nickname}" do %>
+						(<%= usuario.nombre_completo %>)
+						<% end %>
+					</p>
+					<hr>
+				<% end %>
+			<% end %>
+
+			<br>
+			<% if @rarticulos.size > 0 %>
+			<h4 class="h4class" style="color: wheat">Articulos encontrados: <%= @rarticulos.size %></h4>
+				<% @rarticulos.each do |articulo|  %>
+				<div class="row">
+					<div class="col-md-3">
+						<%= link_to articulo do %>
+							<%= image_tag(articulo.imagen_previa, class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %>
+						<% end %>
+					</div>
+
+					<div class="col-md-9">
+						<%= link_to articulo do %>
+							<h3><%= articulo.titulo %>.</h3>
+						<% end %>
+						
+						<p><small><%=raw content_with_emoji(truncate(articulo.intro, :length => 250)) %></small></p>
+						<% if (articulo.contenido.length > 250) %>
+						  <%= link_to "Ver más", articulo%>
+						<% end %>
+					</div>
+				</div>
+				<hr>
+				<% end %>
+			<% end %>
+		</div>
+	<% end %>
 	<div class="panel-footer">
 		<!--%= will_paginate @rposts, renderer: BootstrapPagination::Rails %-->
 	</div>

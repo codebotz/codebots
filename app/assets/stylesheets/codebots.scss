@@ -85,6 +85,10 @@ aside{
   /*opacity: .3;*/
 }
 
+.divcol .content pre{
+  margin: 0;
+}
+
 /*
 .divcol .content:hover{
   opacity: 1;
@@ -216,9 +220,13 @@ footer #categorias li{
 }
 
 
+.panel li a{
+  color: wheat;
+}
+
 li a{
   /*color: #B22844;*/
-  font-size: .7em;
+  font-size: 1em;
   color: #004455;	
   -webkit-transition: all .4s ease-in-out;
        -o-transition: all .4s ease-in-out;
@@ -405,6 +413,7 @@ footer #categorias li a:hover{
 
 .panel-default > .panel-heading{
   padding: 5px;
+  color: #fff;
 }
 
 .panel-footer{

@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   skip_before_filter :verify_authenticity_token #Para usar metodo post
-  before_action :authenticate_usuario!, except: [:index,:show,:miperfil,:inicio]
+  before_action :authenticate_usuario!, except: [:index,:show,:miperfil,:inicio,:search]
 	#Metodo para cuando se da cilck en ir a perfil(propio)
   def home
   	nickname = current_usuario.nickname
@@ -34,7 +34,7 @@ class PagesController < ApplicationController
         @busqueda = params[:busqueda]
         puts "\nIngreso al metodo de búsqueda..."
         @rusuarios = Usuario.where("nickname like ?", "%#{@busqueda.downcase}%")
-        @rposts = Post.where("titulo like ?", "%#{@busqueda.downcase}%").order(created_at: :desc)
+        @rarticulos = Articulo.where("titulo like ?", "%#{@busqueda.downcase}%").order(created_at: :desc)
         #.paginate(:page => params[:page], :per_page => 10)
         format.html { render :busqueda }
       else
@@ -46,6 +46,12 @@ class PagesController < ApplicationController
   #Metodo cuando ponen una url que no esta en un path creado por el admin
   def not_found
     render file: 'public/404', status: 404, formats: [:html]
+  end
+
+  #Ultimos articulos mostrados en el aside
+  def ultimos_articulos
+    puts "\nObteniendo ultimos articulos de la base..."
+        @uarticulos = Articulo.limit(3).order(created_at: :desc)
   end
 
 end

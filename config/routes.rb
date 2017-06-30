@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :articulos
   resources :estados
   get 'perfil/show'
 
@@ -16,9 +17,11 @@ Rails.application.routes.draw do
   end
 
 
-  resources :posts
-    get 'foro', to: 'posts#index', as: :foro
-    root to: 'posts#inedex'
+  #resources :posts
+    #get 'foro', to: 'posts#index', as: :foro
+
+  resources :articulos
+    #get 'articulos', to: 'articulos#index', as: :articulos
 
     #Para mostrar los resultados de búsqueda
     post 'busqueda', to: 'pages#search', as: :busqueda
@@ -26,6 +29,8 @@ Rails.application.routes.draw do
     get 'home', to: 'pages#home'
     #Para mostrar el perfil del usuario
     get '/:id', to: 'pages#show'
+
+    #get '/articulos/:titulo', to: 'articulos#show'
 
     post 'posts/like', to: 'posts#like'
   

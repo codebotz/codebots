@@ -15,14 +15,24 @@
 	<section>
 		<h3>Últimos artículos</h3>
 		<ul>
-		<!--% @pins.latest do |pin| %>
-			<li><!%= pin.description %></li>
-		<!% end %-->
 		</ul>
-		<p>
-		Obtengo de la db los últimos titulos de artículos y un poco de su texto, por quien fue
-		creado, la fecha, likes, comentarios, etc...
-		</p>
+		
+		<% @uarticulos.each do |uarticulo| %>
+			<div class="row">
+				<div class="col-lg-5 col-md-12 col-sm-12">
+					<%= image_tag(uarticulo.imagen_previa,:alt => uarticulo.titulo,:title=> uarticulo.titulo,class: "img-responsive img-portfolio img-hover", :style => "width:100%;height:auto;") %>
+				</div>
+				<div class="col-lg-7 col-md-12 col-sm-12">
+					<%= link_to uarticulo do %>
+						<!--h5>< %= uarticulo.titulo %></h5-->
+						<%= truncate(uarticulo.intro, :length => 150) %>
+					<% end %>
+				</div>
+			</div>
+			<hr>
+		<% end %>			
+
+		
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -40,7 +50,7 @@
 	
 	<!-- Contenido por Carpetas -->
 	<section id="categorias">
-		<h3>Contenido por carpetas</h3>
+		<h3>Contenido por categorías</h3>
 		<p>
 		aqui metere alguna estupidez
 		</p>

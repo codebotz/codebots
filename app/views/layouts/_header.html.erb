@@ -32,14 +32,18 @@
                                     <li><a href="#"><i class="fa fa-bug"></i> Testing</a></li>
                                     <li><a href="#"><i class="fa fa-html5"></i> Web</a></li>
                                     <li class="divider"><a href="#"></a></li>
-                                    <li><a href="#"><i class="fa fa-globe"></i> Todos</a></li>
+                                    <li>
+                                        <%= link_to articulos_path do %>
+                                            <i class="fa fa-globe"></i> Todos
+                                        <% end %>       
+                                    </li>
                                 </ul>
                             </li>
-                            <li>
-                            <%= link_to foro_path do %>
+                            <!--li>
+                            < %= link_to foro_path do %>
                                 <i class="fa fa-commenting-o"></i><span style="vertical-align: middle;"> Foro</span>
-                            <% end %>
-                            </li>
+                            < % end %>
+                            </li-->
                         </ul>
                 
                 <ul class="nav navbar-nav navbar-right nav-pills hidden-xs">
@@ -93,6 +97,9 @@
                 
 
                     <% if usuario_signed_in? %>
+                            <li>
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i> 
+                            </li>
                             <li>
                                 <%= link_to home_path do %>
                                     <i class="fa fa-user-circle-o" aria-hidden="true"></i> <%= current_usuario.nickname %>

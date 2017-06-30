@@ -1,0 +1,43 @@
+<%= form_for(articulo) do |f| %>
+  <% if articulo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(articulo.errors.count, "error") %> prohibited this articulo from being saved:</h2>
+
+      <ul>
+      <% articulo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :titulo %>
+    <%= f.text_field :titulo, class: 'form-control'  %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :intro %>
+    <%= f.text_area :intro, class: 'form-control'  %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :contenido %>
+    <%= f.text_area :contenido, class: 'form-control'  %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :imagen_previa %>
+    <%= f.text_field :imagen_previa, class: 'form-control'  %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :url %>
+    <%= f.text_field :url, class: 'form-control'  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Crear Artículo", class: 'btn btn-primary'  %>
+  </div>
+<% end %>
+<br/>
