@@ -10,12 +10,13 @@
 					<div class="panel-heading" style="background-color:#000;color:#fff;">Temas de Interés</div> 
 					<div class="panel-body">
 					<ul class="nav nav-stacked">
-						<li><a href="#">Bootstrap</a></li>
-						<li><a href="#">Java</a></li>
-						<li><a href="#">Ruby</a></li>
-						<li><a href="#">Testing</a></li>
-						<li><a href="#">Video Jugeos</a></li>
-						<li><a href="#">Tecnología</a></li>
+						<li><%= link_to "Dieño Web", categoria_path("web")%></li>
+						<li><%= link_to "Java", categoria_path("java")%></li>
+						<li><%= link_to "Ruby", categoria_path("ruby")%></li>
+						<li><%= link_to "Testing", categoria_path("testing")%></li>
+						<li><%= link_to "Video Juegos", categoria_path("games")%></li>
+						<li><%= link_to "Tecnología", categoria_path("tecnologia")%></li>
+						<li><%= link_to "Codegirls", categoria_path("codegirls")%></li>
 					</ul>
 					<div class="accordion" id="accordion2">
 						<div class="accordion-group">
@@ -63,9 +64,14 @@
 				
 			
 			<!-- right content column-->
-			<div class="col-md-8 padd0" id="content">
+			<div class="col-md-9 padd0" id="content">
 				<div class="panel panel-info">
-				<div class="panel-heading" style="background-color:#111;color:#fff;">Publicado por: <a href="#"><code>DLVNGN</code></a> <%= @articulo.updated_at.strftime("%b %d %Y, %I:%M %p") %></div>   
+				<div class="panel-heading" style="background-color:#111;color:#fff;">
+					Publicado por: <%= link_to "/#{@articulo.usuario.nickname}" do %> 
+						<code><%= @articulo.usuario.nickname %></code> 
+					<% end %> 
+					<%= @articulo.updated_at.strftime("%b %d %Y, %I:%M %p") %>
+				</div>   
 				<div class="panel-body">
 				  <div class="row ">
 				  <div class="col col-sm-12">
@@ -73,25 +79,37 @@
 				  </div>   
 				  <div class="col-md-12">
 					<h2><%= @articulo.titulo %>.</h2>
-					<p><%= @articulo.intro %></p>
-					<br>
+					<p><%=raw @articulo.intro %></p>
 				  </div> 
 				</div>
-				<hr>
 				  
 				<div class="row">
 					<div class="col-md-12" id="content">
 						<p><%=raw @articulo.contenido %></p>
+						<div id="detalles-articulo">
+							<div class="row">
+								<div class="pull-left">
+									<span class="detalles-articulo"><%= @articulo.categoria.upcase %></span>
+									<% tags = @articulo.tags.split(';') %>
+									<% tags.each do |tag|%>
+											<code><%= tag %></code>
+									<% end %>
+								</div>
+								<div class="pull-right">
+									Me gusta <i class="fa fa-diamond"> <%= rand(1..100) %></i>	
+								</div>
+							</div>
+						</div>
 					<hr>						
-				
+
 				  <div class="well text-center"> 
-					<h1>Centered Text</h1>
-					This was a 2.x challenge that seems a little easier in 3.
+					<h1>Sic Parvis Magna</h1>
+					La grandeza proviene de pequeños comienzos
 					<br><br>
 					<div style="font-size:70pt">
-					  <i class="fa fa-camera"></i>
-					  <i class="fa fa-desktop"></i>
-					  <i class="fa fa-gg"></i>
+					  <i class="fa fa-html5"></i>
+					  <i class="fa fa-code"></i>
+					  <i class="fa fa-coffee"></i>
 					</div>
 				  </div>
 					<br><br>

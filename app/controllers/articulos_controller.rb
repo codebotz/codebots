@@ -2,6 +2,12 @@ class ArticulosController < ApplicationController
   before_action :authenticate_usuario!, except: [:index,:show]
   before_action :set_articulo, only: [:show, :edit, :update, :destroy]
 
+  def categoria
+    puts "\nArticulos_controller:categoria: [Obteniendo articulos categoria #{params[:categoria]}]"
+    @articulos = Articulo.where("categoria = ?", params[:categoria]).order(created_at: :desc).paginate(:page => params[:page], :per_page => 9)
+    render "articulos/categoria/#{params[:categoria]}"
+  end
+
   # GET /articulos
   # GET /articulos.json
   def index
@@ -11,17 +17,21 @@ class ArticulosController < ApplicationController
   # GET /articulos/1
   # GET /articulos/1.json
   def show
-    #modificando este metodo para traer objetos de la bd cuando ingresen a un articulo
-    #@articulos = Articulo.find_by_id(params[:id])
-    #if @articulo
-    puts "Ingresando a show de articulos"
-    #@articulosSmall = Articulos.order("RAND()").limit(2)
-    @gridarticulos = Articulo.order("RANDOM()").limit(8)
-    @artimg = Articulo.order("RANDOM()").limit(1)
-    @artrand = Articulo.order("RANDOM()+1").limit(1)      
 
-    puts @artrand
-    #end
+    #modificando este metodo para traer objetos de la bd cuando ingresen a un articulo
+    #@articulos = Articulo.find_by_url(params[:url])
+    #if @articulo
+      puts "Ingresando a show de articulos"
+      #@articulosSmall = Articulos.order("RAND()").limit(2)
+      @gridarticulos = Articulo.order("RANDOM()").limit(8)
+      @artimg = Articulo.order("RANDOM()").limit(1)
+      @artrand = Articulo.order("RANDOM()+1").limit(1)      
+      #@articulo = Articulo.find_by_url(params[:url])
+      puts @artrand
+      #render :show
+    #else
+     #render file: 'public/404', status: 404, formats: [:html]
+    #end 
 
     #HAcer que no se repitan los articulos artrand y artimg
 
@@ -71,6 +81,10 @@ class ArticulosController < ApplicationController
     end
   end
 
+  def usuario(id)
+    Usuario.find(params[:id])
+  end
+
   # DELETE /articulos/1
   # DELETE /articulos/1.json
   def destroy
@@ -84,11 +98,12 @@ class ArticulosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_articulo
+      #@articulo = Articulo.find_by_url(params[:url])
       @articulo = Articulo.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def articulo_params
-      params.require(:articulo).permit(:titulo, :intro, :contenido, :imagen_previa, :url)
+      params.require(:articulo).permit(:usuario_id, :titulo, :intro, :contenido, :categoria, :imagen_previa, :url, :tags)
     end
 end

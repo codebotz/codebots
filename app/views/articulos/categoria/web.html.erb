@@ -1,0 +1,78 @@
+<br>
+<br>
+<div class="panel panel-default">  
+  <div class="panel-heading">
+    <div class="row container-fluid">
+      <div class="pull-left">
+        <h2>Artículos de Diseño Web <i class="fa fa-html5"></i> <i class="fa fa-css3"></i></h2>
+      </div>
+      <% if usuario_signed_in? %>
+        <% if current_usuario.nickname == "codebot" %>
+          <div class="pull-right">
+          <%= link_to new_articulo_path, class: "btn btn-primary btn-sm", alt: "Nuevo Articulo" do%>
+            <i class="fa fa-plus-circle" aria-hidden="true"></i> Nuevo artículo
+          <% end %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="panel-body">
+    <p></p>
+  </div>
+
+
+  <% if @articulos.size == 0 %>
+    <div id="sinresultados" class="panel-body">
+      <h4 class="h4class"  style="color: wheat">Aún no hay articulos <i class="fa fa-frown-o"></i></h4>
+    </div>
+  <% else %>
+
+  <!-- marketing -->
+  <!--div class="grid row marketing"-->
+    <!-- masonry -->
+    <div class="grid-sizer"></div>
+    <div class="container-fluid transitions-enabled centered clearfix masonry">
+
+    <br>
+    <div class="panel panel-primary">
+
+  <div class="center col-md-12 col-md-offset-0">
+    <%= will_paginate @articulos, renderer: BootstrapPagination::Rails %>
+  </div>
+
+<!-- Sección Artículos -->
+<section class="row col-xs-12 articles">
+    <% cont = 1 %>
+    <% @articulos.each do |articulo| %>
+    <div class="col-xs-12 col-sm-6 col-md-4 divcol">
+        <%= link_to articulo do %><h3><%= articulo.titulo %></h3><% end %>
+        <div class="content">
+            <p>
+              <%=raw articulo.intro %>
+            </p>
+            <%= link_to articulo do %><%= image_tag(articulo.imagen_previa, :alt => "HTML5/CSS3", class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %><% end %>
+            <br />
+            <pre>Creado por: <b>dkucode</b> | <i class="fa fa-diamond"> <%= rand(1..100) %></i><!-- %= articulo.updated_at.strftime("%d/%m/%Y %I:%M%p") %--></pre>
+        </div>
+    </div>
+      <% if (cont % 2) == 0 && cont!=6 %>
+        <div class="clearfix visible-sm-block"></div>
+      <% elsif (cont % 3) == 0 %>
+        <div class="clearfix visible-lg-block"></div>
+      <% elsif (cont % 6) == 0 %>
+        <div class="clearfix visible-lg-block"></div>
+      <% end %>
+      <% cont = cont + 1 %>
+    <% end %>
+  <!-- /Sección Artículos -->
+</section>              
+ </div>
+  <div class="center col-md-12 col-md-offset-0">
+    <%= will_paginate @articulos, renderer: BootstrapPagination::Rails %>
+  </div>
+    </div>
+    <!-- end masonry -->
+  <!--/div-->
+  <!-- end marketing -->
+  <% end %>

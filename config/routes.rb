@@ -30,7 +30,12 @@ Rails.application.routes.draw do
     #Para mostrar el perfil del usuario
     get '/:id', to: 'pages#show'
 
-    #get '/articulos/:titulo', to: 'articulos#show'
+    get 'articulos/categoria/:categoria', to: 'articulos#categoria', as: :categoria
+    #get 'articulos/categoria/:categoria', to: 'articulos#ruby', as: :ruby
+    #get 'articulos/categoria/:categoria', to: 'articulos#java', as: :java
+    #get 'articulos/categoria/:categoria', to: 'articulos#testing', as: :testing
+    #get 'articulos/categoria/:categoria', to: 'articulos#web', as: :web
+    #get '/articulos/:url', to: 'articulos#show'
 
     post 'posts/like', to: 'posts#like'
   

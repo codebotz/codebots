@@ -13,15 +13,17 @@ class ApplicationController < ActionController::Base
 
 	#Ultimos articulos mostrados en el aside
 	def ultimos_articulos
-		puts "\nObteniendo datos de bd..."
+		puts "\nApplication_controller: [Obteniendo articulos aside]"
 	    @uarticulos = Articulo.limit(3).order(created_at: :desc)
 	end
 
 	def nueve_articulos
+		puts "\nApplication_controller: [Obteniendo articulos inicio]"
 		@iarticulos = Articulo.limit(9).order(created_at: :desc)		
 	end
 	
 	def mejores_articulos
+		puts "\nApplication_controller: [Obteniendo articulos footer]"
 		@marticulos = Articulo.limit(4).order(created_at: :desc)		
 	end
 end

@@ -2,10 +2,11 @@
 <br>
 <div class="panel panel-primary">
 	<div class="panel-heading">
-		<h2>Resultados para <i style="color: wheat;">"<%= @busqueda %>"</i></h2>
+		<h2>Resultados para <i style="color: wheat;">"<%= @busqueda %>"</i></h2> <h4 class="h4class" style="color: wheat">Articulos encontrados: <%= @rarticulos.size %></h4>
 	</div>
 
-	<% if @rusuarios.size == 0 && @rarticulos.size == 0%>
+	<!--% if @rusuarios.size == 0 && @rarticulos.size == 0%-->
+	<% if @rarticulos.size == 0%>
 		<div id="sinresultados" class="panel-body">
 			<h4 class="h4class"  style="color: wheat">No se encontraron registros <i class="fa fa-frown-o"></i></h4>
 		</div>
@@ -13,20 +14,19 @@
 	<% else %>
 
 		<div id="resultados" class="panel-body">		
-			<% if @rusuarios.size > 0 %>
-			<h4 class="h4class"  style="color: wheat">Usuarios encontrados: <%= @rusuarios.size %></h4>
-				<% @rusuarios.each do |usuario|  %>
-					<p><%= usuario.nickname %>.<%= link_to "/#{usuario.nickname}" do %>
-						(<%= usuario.nombre_completo %>)
-						<% end %>
+			<!--% if @rusuarios.size > 0 %>
+			<h4 class="h4class"  style="color: wheat">Usuarios encontrados: < %= @rusuarios.size %></h4>
+				< % @rusuarios.each do |usuario|  %>
+					<p>< %= usuario.nickname %>.< %= link_to "/#{usuario.nickname}" do %>
+						(< %= usuario.nombre_completo %>)
+						< % end %>
 					</p>
 					<hr>
-				<% end %>
-			<% end %>
+				< % end %>
+			< % end %>
 
-			<br>
+			<br-->
 			<% if @rarticulos.size > 0 %>
-			<h4 class="h4class" style="color: wheat">Articulos encontrados: <%= @rarticulos.size %></h4>
 				<% @rarticulos.each do |articulo|  %>
 				<div class="row">
 					<div class="col-md-3">

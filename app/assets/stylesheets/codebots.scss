@@ -853,4 +853,30 @@ margin-right: 7px;
   color: #E5FF00;  
 }
 
-/*agregando basura*/
+#detalles-articulo{
+  background: #000;
+  width: 100%;
+  padding: 11px 20px 11px 9px;
+  color: #fff;
+}
+
+.detalles-articulo{
+  background: #2ecc71;
+  color: #000;
+  border-radius: 3px;
+  padding: 5px;
+  transition: .3s all;
+  -webkit-transition: .3s all;
+  -moz-transition: .3s all;
+  -o-transition: .3s all;
+  -ms-transition: .3s all; 
+}
+
+.detalles-articulo:hover{
+  background: rgba(236, 240, 241,1.0);
+  transition: .3s all;
+  -webkit-transition: .3s all;
+  -moz-transition: .3s all;
+  -o-transition: .3s all;
+  -ms-transition: .3s all; 
+}

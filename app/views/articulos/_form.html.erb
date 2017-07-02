@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <%= f.hidden_field :usuario_id, value: current_usuario.id %>
+  
   <div class="field form-group">
     <%= f.label :titulo %>
     <%= f.text_field :titulo, class: 'form-control'  %>
@@ -32,8 +34,18 @@
   </div>
 
   <div class="field form-group">
+    <%= f.label :categoria %>
+    <%= f.text_field :categoria, class: 'form-control', placeholder: 'Ex. testing, java, ruby, web, teconlogia, games'  %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :tags %>
+    <%= f.text_field :tags, class: 'form-control', placeholder: 'Tag1;Tag2;Tag3'  %>
+  </div>
+
+  <div class="field form-group">
     <%= f.label :url %>
-    <%= f.text_field :url, class: 'form-control'  %>
+    <%= f.text_field :url, class: 'form-control', placeholder: 'url-para-el-articulo'  %>
   </div>
 
   <div class="actions">

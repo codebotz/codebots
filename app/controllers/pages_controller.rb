@@ -33,8 +33,9 @@ class PagesController < ApplicationController
       if params[:busqueda].strip != "" #si hay solo espacios no busca nada
         @busqueda = params[:busqueda]
         puts "\nIngreso al metodo de búsqueda..."
-        @rusuarios = Usuario.where("nickname like ?", "%#{@busqueda.downcase}%")
-        @rarticulos = Articulo.where("titulo like ?", "%#{@busqueda.downcase}%").order(created_at: :desc)
+        #Comento la búsqueda de usuarios, aún no dejaté visible esta funcionalidad 
+        #@rusuarios = Usuario.where("nickname like ?", "%#{@busqueda.downcase}%")
+        @rarticulos = Articulo.where("tags like ?", "%#{@busqueda.downcase}%").order(created_at: :desc)
         #.paginate(:page => params[:page], :per_page => 10)
         format.html { render :busqueda }
       else
