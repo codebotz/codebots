@@ -46,6 +46,4 @@ class Usuario < ApplicationRecord
   def like?(articulo)
     self.likes.find_by_articulo_id(articulo.id)
   end
-
-
 end

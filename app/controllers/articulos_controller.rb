@@ -1,5 +1,5 @@
 class ArticulosController < ApplicationController
-  before_action :authenticate_usuario!, except: [:index,:show]
+  before_action :authenticate_usuario!, except: [:index,:show,:categoria]
   before_action :set_articulo, only: [:show, :edit, :update, :destroy]
 
   def categoria
