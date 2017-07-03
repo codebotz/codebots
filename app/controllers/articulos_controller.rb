@@ -26,8 +26,11 @@ class ArticulosController < ApplicationController
       @gridarticulos = Articulo.order("RANDOM()").limit(8)
       @artimg = Articulo.order("RANDOM()").limit(1)
       @artrand = Articulo.order("RANDOM()+1").limit(1)      
+      @likes = Like.where(articulo_id: @articulo.id).count
+
+
       #@articulo = Articulo.find_by_url(params[:url])
-      puts @artrand
+      
       #render :show
     #else
      #render file: 'public/404', status: 404, formats: [:html]

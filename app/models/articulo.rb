@@ -3,6 +3,9 @@ class Articulo < ApplicationRecord
 	#Un articulo pertenece a un usuario
 	belongs_to :usuario
 
+	has_many :likes, dependent: :destroy
+  	has_many :usuarios, through: :likes
+
 	validates :titulo, presence: true
 						#,
 						#lenght: {minimum: 100}

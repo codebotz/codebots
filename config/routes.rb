@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :likes
   resources :articulos
   resources :estados
   get 'perfil/show'
@@ -42,7 +43,12 @@ Rails.application.routes.draw do
     #Configuración para enviar a 404 si url no existe
     get '*path', to: 'pages#not_found', via: :all
     
-    
+    #Agregar lineas para funcionalidad de likes a articulo
+    #match 'like', to: 'likes#like', via: :post
+    #match 'unlike', to: 'likes#unlike', via: :delete
+
+    match 'likes/:id', to: 'likes#like', via: :post
+    match 'unlike/:id', to: 'likes#unlike', via: :delete, as: :unlike
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

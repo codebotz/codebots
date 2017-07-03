@@ -67,11 +67,20 @@
 			<div class="col-md-9 padd0" id="content">
 				<div class="panel panel-info">
 				<div class="panel-heading" style="background-color:#111;color:#fff;">
-					Publicado por: <%= link_to "/#{@articulo.usuario.nickname}" do %> 
-						<code><%= @articulo.usuario.nickname %></code> 
-					<% end %> 
-					<%= @articulo.updated_at.strftime("%b %d %Y, %I:%M %p") %>
-				</div>   
+					<div class="row">
+						
+					<div class="pull-left">
+						Publicado por: <%= link_to "/#{@articulo.usuario.nickname}" do %> 
+							<code><%= @articulo.usuario.nickname %></code> 
+						<% end %> 
+						<%= @articulo.updated_at.strftime("%b %d %Y, %I:%M %p") %>
+					</div> 
+
+					<div class="pull-right">
+						<i class="fa fa-diamond"></i> <%= @likes %>  
+					</div>
+					</div>
+				</div> 
 				<div class="panel-body">
 				  <div class="row ">
 				  <div class="col col-sm-12">
@@ -96,7 +105,9 @@
 									<% end %>
 								</div>
 								<div class="pull-right">
-									Me gusta <i class="fa fa-diamond"> <%= rand(1..100) %></i>	
+									<div id="<%=@articulo.id%>">
+										<%= render partial: "likes/button", locals: { articulo: @articulo } %>
+									</div>
 								</div>
 							</div>
 						</div>

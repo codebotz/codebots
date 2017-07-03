@@ -50,6 +50,7 @@ gem 'rails_emoji_picker'#https://github.com/ID25/rails_emoji_picker
 gem 'social-share-button'
 #gem 'kaminari', '~> 1.0', '>= 1.0.1'
 #gem "paperclip", "~> 5.0.0"
+gem 'record_tag_helper', '~> 1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

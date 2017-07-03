@@ -53,7 +53,7 @@
             </p>
             <%= link_to articulo do %><%= image_tag(articulo.imagen_previa, :alt => "HTML5/CSS3", class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %><% end %>
             <br />
-            <pre>Creado por: <b><%= articulo.usuario.nickname %></b> | <i class="fa fa-diamond"> <%= rand(100..1000) %></i><!-- %= articulo.updated_at.strftime("%d/%m/%Y %I:%M%p") %--></pre>
+            <pre>Creado por: <b><%= articulo.usuario.nickname %></b> | <i class="fa fa-diamond"> <%= @likes %></i><!-- %= articulo.updated_at.strftime("%d/%m/%Y %I:%M%p") %--></pre>
         </div>
     </div>
       <% if (cont % 2) == 0 && cont!=6 %>
