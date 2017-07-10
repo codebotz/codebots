@@ -1,9 +1,9 @@
 <% if usuario_signed_in? %>
 		<% if current_usuario.like?(articulo) %>
-		  <%= button_to "No me gusta", unlike_path(id: articulo.id), remote: true, method: :delete, :class => "btn btn-danger btn-sm"  %>
+		   <%= button_to "No me gusta", unlike_path(id: articulo.id), remote: true, method: :delete, :class => "btn btn-danger btn-sm"  %>
 		<% else %>
-		  <%= button_to "Me gusta", like_path(id: articulo.id), remote: true, :class => "btn btn-info btn-sm"  %>
+		   <%= button_to "Me gusta", like_path(id: articulo.id), remote: true, :class => "btn btn-info btn-sm"  %>
 		<% end %>
 <% else %>
-	<%= button_to "Me gusta", like_path(id: articulo.id), remote: true, disabled: true, :class => "btn btn-info btn-sm", tittle: "Necesitas iniciar sesión para realizar esta acción" %>
+	<%= button_to "Me gusta", like_path(id: articulo.id), remote: true, disabled: true, :class => "btn btn-info btn-sm", title: 'Necesitas iniciar sesión', 'data-toggle' => 'tooltip', 'data-placement' => 'top' %>
 <% end %>

@@ -1,14 +1,19 @@
 <!-- Aside -->
 <aside id="extra-content">
 	<h3 class="text-info"><small><i class="fa fa-star"></i><span style="vertical-align: middle;"></span></small> Sitios útiles</h3>
-	<ul>
-		<a href="http://github.com" target="_blank"><li>github.com</li></a>
-		<a><li>stackoverflow.com</li></a>
-        <a><li>chachigonzales.com</li></a>
-        <a><li>jquery-plugins.net/</li></a>
-		<a><li>codyhouse.com</li></a>
-		<a><li>dlvngn.com</li></a>
-		<br />
+	<p>
+		Te mostramos una lista de sitios útiles en los cuales también podrás obtener conocimientos sobre programación en diferentes lenguajes y plataformas
+	</p>
+	<ul class="categorias">
+		<a href="http://stackoverflow.com" target="_blank"><li><i class="fa fa-globe"></i> stackoverflow.com</li></a>
+		<a href="http://ruby-doc.org" target="_blank"><li><i class="fa fa-globe"></i> ruby-doc.org</li></a>
+		<a href="http://primefaces.org" target="_blank"><li><i class="fa fa-globe"></i> primefaces.org</li></a>
+		<a href="http://rubygems.org" target="_blank"><li><i class="fa fa-globe"></i> rubygems.org</li></a>
+		<a href="http://github.com" target="_blank"><li><i class="fa fa-globe"></i> github.com</li></a>
+        <a href="http://getbootstrap.com" target="_blank"><li><i class="fa fa-globe"></i> getbootstrap.com</li></a>
+        <a href="http://jquery-plugins.net" target="_blank"><li><i class="fa fa-globe"></i> jquery-plugins.net/</li></a>
+		<a href="http://codyhouse.com" target="_blank"><li><i class="fa fa-globe"></i> codyhouse.com</li></a>
+		<a href="http://rubinmz.com" target="_blank"><li><i class="fa fa-globe"></i> rubinmz.com</li></a>
 	</ul>
 	
 	<!-- Últimos Artículos -->
@@ -33,17 +38,18 @@
 		<% end %>			
 
 		
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<p>
+			orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</p>
 		<p>
-		Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</p>
 	<!-- /Últimos Artículos -->
 	</section>
@@ -52,8 +58,45 @@
 	<section id="categorias">
 		<h3>Contenido por categorías</h3>
 		<p>
-		aqui metere alguna estupidez
+			Puedes acceder a los artículos por su categoría.
 		</p>
+		<ul class="categorias">
+			<li>
+				<%= link_to categoria_path("ruby") do %>
+				<i class="fa fa-folder-open"></i> RUBY [ <%= @articulosRuby %> ]
+				<% end %>
+			</li>
+			<li>
+				<%= link_to categoria_path("java") do %>
+				<i class="fa fa-folder-open"></i> JAVA [ <%= @articulosJava %> ]
+				<% end %>
+			</li>
+			<li>
+				<%= link_to categoria_path("testing") do %>
+				<i class="fa fa-folder-open"></i> Testing [ <%= @articulosTesting %> ]
+				<% end %>						
+			</li>
+			<li>
+				<%= link_to categoria_path("web") do %>
+				<i class="fa fa-folder-open"></i> Web [ <%= @articulosWeb %> ]
+				<% end %>
+			</li>
+			<li>
+				<%= link_to categoria_path("tecnologia") do %>
+				<i class="fa fa-folder-open"></i> Tecnología [ <%= @articulosTecnologia %> ]
+				<% end %>
+			</li>
+			<li>
+				<%= link_to categoria_path("games") do %>
+				<i class="fa fa-folder-open"></i> Video Games [ <%= @articulosGames %> ]
+				<% end %>
+			</li>
+			<li>
+				<%= link_to categoria_path("codegirls") do %>
+				<i class="fa fa-folder-open"></i> Codegirls [ <%= @articulosCodegirls %> ]
+				<% end %>
+			</li>
+		</ul>
 	<!-- /Contenido por Categorías -->
 	</section>
 	
@@ -61,7 +104,7 @@
 	<section>
 		<h3>Redes Sociales</h3>
 		<p>
-		¡Dale like a mi página en Facebook y sígueme en Twitah! (publico pura pendejada xD) ¡No te arrepentirás!
+			¡No te olvdes de seguirnos en nuestras redes sociales Facebook, Twitter y suscribirte en nuestro canal de YouTube, publicamos más contenido en ellas! ¡No te arrepentirás!
 		</p>
 		
 		<div class="center">

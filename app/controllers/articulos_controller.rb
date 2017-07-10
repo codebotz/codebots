@@ -5,6 +5,12 @@ class ArticulosController < ApplicationController
   def categoria
     puts "\nArticulos_controller:categoria: [Obteniendo articulos categoria #{params[:categoria]}]"
     @articulos = Articulo.where("categoria = ?", params[:categoria]).order(created_at: :desc).paginate(:page => params[:page], :per_page => 9)
+    @articulos.each do |articulo|
+      #articulo.like = Like.where(articulo_id: articulo.id).count
+      if articulo.like.nil?
+        articulo.like = 0
+      end
+    end
     render "articulos/categoria/#{params[:categoria]}"
   end
 
@@ -12,8 +18,15 @@ class ArticulosController < ApplicationController
   # GET /articulos.json
   def index
     @articulos = Articulo.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 9)
+    @articulos.each do |articulo|
+      #articulo.like = Like.where(articulo_id: articulo.id).count
+      if articulo.like.nil?
+        articulo.like = 0
+      end
+    end
   end
 
+  
   # GET /articulos/1
   # GET /articulos/1.json
   def show
@@ -26,8 +39,8 @@ class ArticulosController < ApplicationController
       @gridarticulos = Articulo.order("RANDOM()").limit(8)
       @artimg = Articulo.order("RANDOM()").limit(1)
       @artrand = Articulo.order("RANDOM()+1").limit(1)      
-      @likes = Like.where(articulo_id: @articulo.id).count
-
+      #@likes = Like.where(articulo_id: @articulo.id).count
+      @artlike = Like.where(articulo_id: @articulo.id).count
 
       #@articulo = Articulo.find_by_url(params[:url])
       

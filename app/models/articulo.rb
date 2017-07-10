@@ -1,5 +1,5 @@
 class Articulo < ApplicationRecord
-	attr_accessible :titulo, :contenido, :intro, :usuario_id, :imagen_previa, :url, :categoria, :tags
+	attr_accessible :titulo, :contenido, :intro, :usuario_id, :imagen_previa, :url, :categoria, :tags, :like
 	#Un articulo pertenece a un usuario
 	belongs_to :usuario
 

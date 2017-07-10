@@ -880,3 +880,16 @@ margin-right: 7px;
   -o-transition: .3s all;
   -ms-transition: .3s all; 
 }
+
+.categorias li{  
+  list-style-type: none;
+  margin-left: -30px;
+}
+
+.categorias li a{
+  color: #2FF7A3;
+}
+
+.categorias li a:hover{
+  color: #2980b9;
+}

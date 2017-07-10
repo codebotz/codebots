@@ -34,11 +34,15 @@ class Usuario < ApplicationRecord
    # creates a new like row with articulo_id and usuario_id
   def like!(articulo)
     self.likes.create!(articulo_id: articulo.id)
+    articulo.like = Like.where(articulo_id: articulo.id).count
+    articulo.save
   end
 
   # destroys a likes with matching articulo_id and usuario_id
-  def unlike!(articulo)
-    like = self.likes.find_by_id(articulo.id)
+  def unlike!(articulo, like_id)
+    articulo.like = articulo.like-1
+    articulo.save
+    like = self.likes.find_by_id(like_id)
     like.destroy!
   end
 

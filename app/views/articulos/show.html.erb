@@ -77,7 +77,7 @@
 					</div> 
 
 					<div class="pull-right">
-						<i class="fa fa-diamond"></i> <%= @likes %>  
+						<i class="fa fa-diamond"></i> <span class="like<%=@articulo.id%>"> <%= render partial: "likes", locals: {artlike: @artlike} %> </span>
 					</div>
 					</div>
 				</div> 
@@ -105,7 +105,7 @@
 									<% end %>
 								</div>
 								<div class="pull-right">
-									<div id="<%=@articulo.id%>">
+									<div class="<%=@articulo.id%>">
 										<%= render partial: "likes/button", locals: { articulo: @articulo } %>
 									</div>
 								</div>

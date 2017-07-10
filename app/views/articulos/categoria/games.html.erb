@@ -4,7 +4,7 @@
   <div class="panel-heading">
     <div class="row container-fluid">
       <div class="pull-left">
-        <h2>Artículos de Java <i class="fa fa-coffee"></i></h2>
+        <h2>Artículos de Video Juegos <i class="fa fa-gamepad"></i></h2>
       </div>
       <% if usuario_signed_in? %>
         <% if current_usuario.nickname == "codebot" %>
@@ -53,7 +53,7 @@
             </p>
             <%= link_to articulo do %><%= image_tag(articulo.imagen_previa, :alt => "HTML5/CSS3", class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %><% end %>
             <br />
-            <pre>Creado por: <b>dkucode</b> | <i class="fa fa-diamond"> <%= rand(1..100) %></i><!-- %= articulo.updated_at.strftime("%d/%m/%Y %I:%M%p") %--></pre>
+            <pre>Creado por: <b>dkucode</b> | <i class="fa fa-diamond"> <%= articulo.like %></i><!-- %= articulo.updated_at.strftime("%d/%m/%Y %I:%M%p") %--></pre>
         </div>
     </div>
       <% if (cont % 2) == 0 && cont!=6 %>
