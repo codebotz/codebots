@@ -82,7 +82,7 @@
 							</div-->
 							<% @marticulos.each do |marticulo|%>
 								<div class="col-md-6 col-md-offset-0 col-sm-offset-0  col-lg-offset-0">
-									<%= link_to marticulo do %>
+									<%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{marticulo.url}" do %>
 										<h5><i class="fa fa-comments-o"></i><%= marticulo.titulo %></h5></a>
 										<q><%= truncate(marticulo.intro, :length => 100)%></q>
 									<% end %>
@@ -107,7 +107,7 @@
 						<div class="row ">
 							<% @marticulos.each do |marticulo|%>
 								<div class="col-md-6 col-md-offset-0 col-sm-offset-0  col-lg-offset-0">
-									<%= link_to marticulo do %>
+									<%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{marticulo.url}" do %>
 										<h5><i class="fa fa-comments-o"></i><%= marticulo.titulo %></h5></a>
 										<q><%= truncate(marticulo.intro, :length => 100)%></q>
 									<% end %>

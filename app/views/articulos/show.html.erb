@@ -127,15 +127,12 @@
 				  
 				  
 				  <% @artrand.each do |a| %>
-					  <%= link_to a do %>
+					  <%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{a.url}" do %>
 					  	<h2><%= a.titulo %></h2>
 					  	<%= image_tag(a.imagen_previa, class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %>					  
 					  <%end%>
-					  <%= truncate(a.intro, :length => 150) %>
+					  <div class="well"><%= truncate(a.intro, :length => 150) %></div> 
 					  <br><br>
-					  <%= link_to a do %>
-					  	<button class="btn btn-default">Ver más</button>
-				  	  <%end%>
 				  <%end%>
 				  
 				  <hr>
@@ -143,10 +140,10 @@
 				  <% @artimg.each do |a| %>
 				   <div class="row">
 					<div class="col-md-6">
-					  <%= link_to a do %><%= image_tag(a.imagen_previa, class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %><%end%>
+					  <%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{a.url}" do %><%= image_tag(a.imagen_previa, class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %><%end%>
 					</div> 
 					<div class="col-md-6">
-					  <%= link_to a do %><h1><%= a.titulo %>.</h1><%end%>
+					  <%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{a.url}" do %><h1><%= a.titulo %>.</h1><%end%>
 					</div>   
 				  </div>
 				  <%end%>
@@ -156,7 +153,7 @@
 				  <% @gridarticulos.each do |garticulo| %>
 
 					<div class="col-md-3 col-sm-6 col-6">
-					  <%= link_to garticulo do %>
+					  <%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{garticulo.url}" do %>
 						<%= image_tag(garticulo.imagen_previa, class: "img-responsive img-portfolio img-hover", :style => "width:100%;", :alt => garticulo.titulo, :title => garticulo.titulo) %>
 					  <% end %>
 					</div>

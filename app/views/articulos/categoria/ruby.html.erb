@@ -45,12 +45,12 @@
     <% cont = 1 %>
     <% @articulos.each do |articulo| %>
     <div class="col-xs-12 col-sm-6 col-md-4 divcol">
-        <%= link_to articulo do %><h3><%= articulo.titulo %></h3><% end %>
+        <%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{articulo.url}" do %><h3><%= articulo.titulo %></h3><% end %>
         <div class="content">
             <p>
               <%=raw articulo.intro %>
             </p>
-            <%= link_to articulo do %><%= image_tag(articulo.imagen_previa, :alt => "HTML5/CSS3", class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %><% end %>
+            <%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{articulo.url}" do %><%= image_tag(articulo.imagen_previa, :alt => "HTML5/CSS3", class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %><% end %>
             <br />
             <pre>Creado por: <b>dkucode</b> | <i class="fa fa-diamond"> <%= articulo.like %></i><!-- %= articulo.updated_at.strftime("%d/%m/%Y %I:%M%p") %--></pre>
         </div>

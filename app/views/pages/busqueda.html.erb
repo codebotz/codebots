@@ -30,19 +30,19 @@
 				<% @rarticulos.each do |articulo|  %>
 				<div class="row">
 					<div class="col-md-3">
-						<%= link_to articulo do %>
+						<%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{articulo.url}" do %>
 							<%= image_tag(articulo.imagen_previa, class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %>
 						<% end %>
 					</div>
 
 					<div class="col-md-9">
-						<%= link_to articulo do %>
+						<%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{articulo.url}" do %>
 							<h3><%= articulo.titulo %>.</h3>
 						<% end %>
 						
 						<p><small><%=raw content_with_emoji(truncate(articulo.intro, :length => 250)) %></small></p>
 						<% if (articulo.contenido.length > 250) %>
-						  <%= link_to "Ver más", articulo%>
+						  <%= link_to "Ver más", "http://#{ApplicationRecord::RUTA}/articulos/#{articulo.url}"%>
 						<% end %>
 					</div>
 				</div>

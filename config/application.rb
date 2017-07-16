@@ -14,5 +14,6 @@ module Codebots
     I18n.enforce_available_locales = false
 	I18n.config.available_locales = :en
 	config.i18n.default_locale = :es
+	RUTA = 'http://localhost:3000sss'
   end
 end

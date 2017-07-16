@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   #resources :posts
     #get 'foro', to: 'posts#index', as: :foro
 
-  resources :articulos
+  #resources :articulos
     #get 'articulos', to: 'articulos#index', as: :articulos
 
     #Para mostrar los resultados de búsqueda
@@ -30,6 +30,9 @@ Rails.application.routes.draw do
     get 'home', to: 'pages#home'
     #Para mostrar el perfil del usuario
     get '/:id', to: 'pages#show'
+
+    #para mostrar el articulo con su url
+    get 'articulos/:id', to: 'articulos#url'
 
     get 'articulos/categoria/:categoria', to: 'articulos#categoria', as: :categoria
     #get 'articulos/categoria/:categoria', to: 'articulos#ruby', as: :ruby

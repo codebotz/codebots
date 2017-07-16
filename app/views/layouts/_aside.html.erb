@@ -28,10 +28,9 @@
 					<%= image_tag(uarticulo.imagen_previa,:alt => uarticulo.titulo,:title=> uarticulo.titulo,class: "img-responsive img-portfolio img-hover", :style => "width:100%;height:auto;") %>
 				</div>
 				<div class="col-lg-7 col-md-12 col-sm-12">
-					<%= link_to uarticulo do %>
-						<!--h5>< %= uarticulo.titulo %></h5-->
-						<%= truncate(uarticulo.intro, :length => 150) %>
-					<% end %>
+						<%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{uarticulo.url}" do %>
+							<%= truncate(uarticulo.intro, :length => 150) %>
+						<% end %>
 				</div>
 			</div>
 			<hr>
@@ -63,12 +62,12 @@
 		<ul class="categorias">
 			<li>
 				<%= link_to categoria_path("ruby") do %>
-				<i class="fa fa-folder-open"></i> RUBY [ <%= @articulosRuby %> ]
+				<i class="fa fa-folder-open"></i> Ruby [ <%= @articulosRuby %> ]
 				<% end %>
 			</li>
 			<li>
 				<%= link_to categoria_path("java") do %>
-				<i class="fa fa-folder-open"></i> JAVA [ <%= @articulosJava %> ]
+				<i class="fa fa-folder-open"></i> Java [ <%= @articulosJava %> ]
 				<% end %>
 			</li>
 			<li>

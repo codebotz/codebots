@@ -5,15 +5,15 @@
 <section class="row col-xs-12 articles">
     <% cont = 1 %>
     <% @iarticulos.each do |articulo| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 divcol">
-        <%= link_to articulo do %><h3><%= articulo.titulo %></h3><% end %>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 divcol">
+        <%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{articulo.url}" do %><h3><%= articulo.titulo %></h3><% end %>
         <div class="content">
             <p>
               <%=raw articulo.intro %>
             </p>
-            <%= link_to articulo do %><%= image_tag(articulo.imagen_previa, class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %><% end %>
+            <%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{articulo.url}" do %><%= image_tag(articulo.imagen_previa, class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %><% end %>
             <br />
-            <pre>Creado por: <b><%= articulo.usuario.nickname %></b> | <i class="fa fa-diamond"> <%= articulo.like %> </i> <!--%= rand(1..100) %--><!-- %= articulo.updated_at.strftime("%d/%m/%Y %I:%M%p") %--></pre>
+            <pre><i class="fa fa-user-circle-o"></i> <b><%= articulo.usuario.nickname %></b> | <i class="fa fa-diamond"> <%= articulo.like %> </i></pre>
         </div>
     </div>
       <% if (cont % 2) == 0 && cont!=6 %>

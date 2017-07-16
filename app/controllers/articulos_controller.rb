@@ -32,7 +32,7 @@ class ArticulosController < ApplicationController
   def show
 
     #modificando este metodo para traer objetos de la bd cuando ingresen a un articulo
-    #@articulos = Articulo.find_by_url(params[:url])
+    @articulo = Articulo.find_by_url(params[:id])
     #if @articulo
       puts "Ingresando a show de articulos"
       #@articulosSmall = Articulos.order("RAND()").limit(2)
@@ -57,6 +57,18 @@ class ArticulosController < ApplicationController
       #@artrand = Articulo.order("RANDOM()").limit(1)      
     #end
   end
+
+
+  def url
+    puts "\n\n\nmetodo de url::::::::::::"
+    @articulo = Articulo.find_by_url(params[:id])
+    if @articulo
+      render :show
+     else
+      render file: 'public/404', status: 404, formats: [:html]
+     end 
+  end
+
 
   # GET /articulos/new
   def new
@@ -98,7 +110,9 @@ class ArticulosController < ApplicationController
   end
 
   def usuario(id)
-    Usuario.find(params[:id])
+    a = Articulo.find_by_url(id)
+    #Usuario.find(params[:id])
+    Usuario.find(a.id)
   end
 
   # DELETE /articulos/1
@@ -114,8 +128,8 @@ class ArticulosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_articulo
-      #@articulo = Articulo.find_by_url(params[:url])
-      @articulo = Articulo.find(params[:id])
+      @articulo = Articulo.find_by_url(params[:url])
+      #@articulo = Articulo.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
