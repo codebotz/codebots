@@ -32,7 +32,7 @@ class ArticulosController < ApplicationController
   def show
 
     #modificando este metodo para traer objetos de la bd cuando ingresen a un articulo
-    @articulo = Articulo.find_by_url(params[:id])
+      @articulo = Articulo.find_by_url(params[:id])
     #if @articulo
       puts "Ingresando a show de articulos"
       #@articulosSmall = Articulos.order("RAND()").limit(2)

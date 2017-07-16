@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170710031102) do
+ActiveRecord::Schema.define(version: 20170716052045) do
 
   create_table "articulos", force: :cascade do |t|
     t.string   "titulo"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170710031102) do
     t.integer  "usuario_id"
     t.text     "tags"
     t.integer  "like"
+    t.index ["url"], name: "index_articulos_on_url", unique: true
     t.index ["usuario_id"], name: "index_articulos_on_usuario_id"
   end
 
