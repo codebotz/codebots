@@ -37,7 +37,7 @@ class PagesController < ApplicationController
         #@rusuarios = Usuario.where("nickname like ?", "%#{@busqueda.downcase}%")
         @rarticulos = Articulo.where("tags like ?", "%#{@busqueda.downcase}%").order(created_at: :desc)
         #.paginate(:page => params[:page], :per_page => 10)
-        format.html { render :busqueda }
+        format.html { render :busqueda}
       else
         format.html { render :inicio, success: 'Por favor ingresa una palabara para la búsqueda.' }
       end

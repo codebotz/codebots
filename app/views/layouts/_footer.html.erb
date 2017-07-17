@@ -5,7 +5,7 @@
 				<!-- Fila p/Headers -->
                 <div class="row">
                     <section class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1  col-sm-offset-0  col-lg-offset-1">
-                        <h3 style="text-align:center;"><i class="fa fa-tag"></i> Etiquetas</h3>
+                        <h3 style="text-align:center;"><i class="fa fa-gamepad"></i> Juego del mes</h3>
                     </section>
                     <section class="hidden-xs col-xs-12 col-sm-6 col-md-5 col-md-offset-1  col-sm-offset-0  col-lg-offset-0">
                         <h3 style="text-align:center;"><i class="fa fa-diamond"></i> Mejores Artículos</h3>
@@ -15,71 +15,21 @@
 				
 				<!-- Fila p/Contenido -->
                 <div class="row">
-					<!-- Categorías de Footer -->
-					<section id="categorias" class="row col-xs-12 col-sm-6 col-md-5 col-md-offset-1 col-sm-offset-0  col-xs-offset-0">
-						<section class="col-xs-3 col-sm-3 col-md-4">
-							<ul class="visible-lg-inline-block visible-md-inline-block visible-sm-inline-block visible-xs-inline-block">
-								<li><a class="fsNon" href="#">Node.js</a></li>
-								<li><a class="fsPair" href="#">PHP5 it's the shit!</a></li>
-								<li><a class="fsNon" href="#">ZanPHP</a></li>
-								<li><a class="fsPair" href="#">Ruby On Rails</a></li>
-								<li><a class="fsNon" href="#">Kendall Jenner</a></li>
-								<li><a class="fsPair" href="#">SQL</a></li>
-								<li><a class="fsNon" href="#">C++</a></li>
-								<li><a class="fsPair" href="#">MySql</a></li>
-								<li><a class="fsNon" href="#">PhPMyAdmin</a></li>
-							</ul>
+					<!-- Webs Relacionadas -->
+					<section id="games" class="row col-xs-12 col-sm-6 col-md-5 col-md-offset-1 col-sm-offset-0 ">
+						<section class="col-xs-12 col-md-6 col-lg-5">
+							<%= image_tag("goku f4 veneta ssb.jpg", :alt => "Goku-Vegeta", class: "img-responsive img-portfolio img-hover", :style => "width:auto;height:auto;") %>
 						</section>
-						<section class="col-xs-3 col-sm-3 col-md-4">
-							<ul class="visible-lg-inline-block visible-md-inline-block visible-sm-inline-block visible-xs-inline-block">
-								<li><a class="fsPair" href="#">Javascript</a></li>
-								<li><a class="fsNon" href="#">Ubuntu</a></li>
-								<li><a class="fsPair" href="#">Jessica Nigri</a></li>
-								<li><a class="fsNon" href="#">Phyton</a></li>
-								<li><a class="fsPair" href="#">Linux</a></li>
-								<li><a class="fsNon" href="#">C#</a></li>
-								<li><a class="fsPair" href="#">PHP5</a></li>
-								<li><a class="fsNon" href="#">jQuery</a></li>
-								<li><a class="fsPair" href="#">Android</a></li>
-							</ul>
+
+						<section class="col-xs-12 col-md-6 col-lg-7">
+							<p><i class="fa fa-quote-left"></i>Dragon Ball Xenoverse 2 es el juego perfecto si eres fan de la saga:<br/>Ningún juego de Dragon Ball ha tenido tantos elementos que a los fans de unos de los ánimes más aclamados por el público les encanta. Consíguelo en los siguientes links: <a href="#">GamePlanet</a>, <a href="#">Gamers</a><i class="fa fa-quote-right"></i> 
+							</p>
 						</section>
-						<section class="col-xs-3 col-sm-3 col-md-4">
-							<ul class="visible-lg-inline-block visible-md-inline-block visible-sm-inline-block visible-xs-inline-block">
-								<li><a class="fsNon" href="#">PS4</a></li>
-								<li><a class="fsPair" href="#">Testing</a></li>
-								<li><a class="fsNon" href="#">Codeigniter</a></li>
-								<li><a class="fsPair" href="#">JAVA</a></li>
-								<li><a class="fsNon" href="#">GTAV</a></li>
-								<li><a class="fsPair" href="#">IOS</a></li>
-								<li><a class="fsNon" href="#">Games</a></li>
-								<li><a class="fsPair" href="#">Kendall Jenner</a></li>
-								<li><a class="fsNon" href="#">HHI 2013</a></li>
-							</ul>
-						</section>
-					<!-- /Categorías de Footer -->
+					<!-- /Webs Relacionadas -->
 					</section>
 
 					<!-- Sección de  Mejores Post SM MD LG-->
 					<section class="hidden-xs row col-sm-6 col-md-5 col-md-offset-0">
-							<!--div class="col-md-6 col-md-offset-0 col-sm-offset-0  col-lg-offset-0">
-								<a href="#"><h5><i class="fa fa-comments-o"></i> Comparar imágenes con JuxtaposeJS</h5></a>
-								<q>Si te gusta realizar comparaciones entre imágenes, ¡esta librería es perfecta para tí! Con Juxtapos...</q>
-							</div>
-							<div class="col-md-6">
-								<a href="#"><h5><i class="fa fa-comments-o"></i> 1a App con Ruby on Rails</h5></a>
-								<q>Ruby on Rails es un popular Framework para el Desarrollo de aplicaiones web, el cual está diseñado...</q>
-							</div>
-							
-							<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
-							
-							<div class="col-md-6 col-md-offset-0 col-sm-offset-0  col-lg-offset-0">
-								<a href="#"><h5><i class="fa fa-comments-o"></i> CRUD Web con JAVA</h5></a>
-								<q>Aprende a crear un sencillo CRUD utilizando el framework Primefaces en su versión 5.0. Es realmente...</q>
-							</div>
-							<div class="col-md-6">
-								<a href="#"><h5><i class="fa fa-comments-o"></i> Pruebas de Softwre</h5></a>
-								<q>En México, cada vez las Pruebas de Software están tomando más importancia dentro de las empresas ...</q>
-							</div-->
 							<% @marticulos.each do |marticulo|%>
 								<div class="col-md-6 col-md-offset-0 col-sm-offset-0  col-lg-offset-0">
 									<%= link_to "http://#{ApplicationRecord::RUTA}/articulos/#{marticulo.url}" do %>
@@ -88,7 +38,6 @@
 									<% end %>
 								</div>
 							<% end %>
-
 					<!-- /Sección de Mejores Post -->
 					</section>
 				<!-- /Fila p/Contenido -->
@@ -152,30 +101,7 @@
 					</div>
 				<!-- /Sección XS de Redes Sociales -->	
 				</div>
-				
-				<!-- Sección Games -->
-				<div class="content row visible-xs visible-sm">
-						<div class="col-lg-12">
-							<h3>¡El juego del Mes!</h3>
-						</div>
-						<div class="content col-md-6">
-							<p>Dragon Ball Xenoverse 2 es el juego perfecto si eres fan de la saga:</p>
-							<ul>
-								<li><strong>Todas las batallas de DG, DBZ y DBGT</strong>
-								</li>
-								<li>Historias alternas a las del anime</li>
-								<li>Nuevo modo de combate</li>
-								<li>DLC's gratis los dos primeros meses</li>
-								<li>¡La saga de Black como contenido descargable en Diciembre!</li>
-								<li>+40 personajes jugables</li>
-							</ul>
-							<p>Ningún juego de Dragon Ball ha tenido tantos elementos que a los fans de unos de los ánimes más aclamados por el público les encanta. Consíguelo en los siguientes links: <a href="#">GamePlanet</a>, <a href="#">Gamers</a></p>
-						</div>
-						<div class="col-md-6">
-							<%= image_tag("goku f4 veneta ssb.jpg", :alt => "Goku-Vegeta", class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %>
-						</div>
-				<!-- /Sección Games -->        
-				</div>
+
 			<!-- /Primer Footer -->
             </div>
 
@@ -186,7 +112,7 @@
 					<div class="col-md-8 col-md-offset-2">
 						<p class="u-mt2 u-mb3">Copyright &copy; 2016, Codebots.net / Rubinmz.com Todos los Derechos Reservados.</p>
 						<p>Al usar este sitio, usted acepta nuestros <a href="/company/terms-of-use">términos de uso </a>  y nuestra  <a href="/company/privacy-policy">Política de Privacidad</a>.
-						Codebots.net ® es una marca registrada, una organización sin ánimo de lucro. Si quieres saber más sobre este sitio, haz clic en el enlace <a href="acerca.html">Acerca de mí</a>. También no olvides darte una vuelta por las otras redes sociales y gracias por el apoyo. Dejame tus <a href="/company/feedback">Comentarios</a>.
+						Codebots.net ® es una marca registrada, una organización sin ánimo de lucro. Si quieres saber más sobre este sitio, haz clic en el enlace Acerca de mí. También no olvides darte una vuelta por las otras redes sociales y gracias por el apoyo. Dejame tus <a href="/company/feedback">Comentarios</a>.
                         </p> 
 						<div class="Footer-social">
 							<%= link_to raw('<i class="icon-2x fa fa-facebook-official"></i>'), "https://www.facebook.com/codebots.net/" %>&nbsp;

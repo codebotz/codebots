@@ -206,12 +206,40 @@ aside{
   }
 
 
+.tags{
+  list-style-type: none;
+  text-decoration: none;
+  margin-left: -30px;
+}
+
+.tags li{
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.tags li a code{
+  color: #000;
+  background: #efefef;
+  -webkit-transition: all .4s ease-in-out;
+       -o-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+  text-decoration: none;
+}
+
+.tags li a code:hover{
+  background: rgba(46, 204, 113,1.0);
+  -webkit-transition: all .4s ease-in-out;
+       -o-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+  text-decoration: none;
+}
+
 .fsPair{
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .fsNon{
-  font-size: 17px;
+  font-size: 14px;
 }
 
 
@@ -889,3 +917,34 @@ margin-right: 7px;
   color: #d8729c;
 }
 
+#aboutme section{
+  display: inline-block;
+}
+#aboutme section p{
+  color: #aaa;
+  padding: 15px;
+}
+#aboutme section img{
+  border: 10px solid #010101;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+#games section{
+  display: inline-block;
+}
+#games section p{
+  color: #aaa;
+  padding: 15px;
+}
+#games section li{
+ color: #aaa;
+}
+#games section img{
+  border: 10px solid #010101;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+#articulodata{
+  display: inline-block;
+}

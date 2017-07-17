@@ -30,32 +30,13 @@ class ArticulosController < ApplicationController
   # GET /articulos/1
   # GET /articulos/1.json
   def show
-
     #modificando este metodo para traer objetos de la bd cuando ingresen a un articulo
       @articulo = Articulo.find_by_url(params[:id])
-    #if @articulo
       puts "Ingresando a show de articulos"
-      #@articulosSmall = Articulos.order("RAND()").limit(2)
       @gridarticulos = Articulo.order("RANDOM()").limit(8)
       @artimg = Articulo.order("RANDOM()").limit(1)
       @artrand = Articulo.order("RANDOM()+1").limit(1)      
-      #@likes = Like.where(articulo_id: @articulo.id).count
       @artlike = Like.where(articulo_id: @articulo.id).count
-
-      #@articulo = Articulo.find_by_url(params[:url])
-      
-      #render :show
-    #else
-     #render file: 'public/404', status: 404, formats: [:html]
-    #end 
-
-    #HAcer que no se repitan los articulos artrand y artimg
-
-
-    #a = Articulo.order("RANDOM()").limit(1)
-    #until a.titulo!=@gridarticulos.titulo do
-      #@artrand = Articulo.order("RANDOM()").limit(1)      
-    #end
   end
 
 
@@ -77,6 +58,9 @@ class ArticulosController < ApplicationController
 
   # GET /articulos/1/edit
   def edit
+    puts "\n\n\nEntro al metodo de edicion de articulo"
+    @articulo = Articulo.find(params[:id])
+    render :edit
   end
 
   # POST /articulos
@@ -86,7 +70,8 @@ class ArticulosController < ApplicationController
 
     respond_to do |format|
       if @articulo.save
-        format.html { redirect_to @articulo, notice: 'Articulo was successfully created.' }
+        puts "\n\nGuardado exitoso del artículo"
+        format.html { redirect_to 'http://#{ApplicationRecord::RUTA}/articulos/#{@articulo.url}', notice: 'Articulo was successfully created.' }
         format.json { render :show, status: :created, location: @articulo }
       else
         format.html { render :new }

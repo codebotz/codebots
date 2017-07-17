@@ -73,11 +73,13 @@
 						Publicado por: <%= link_to "/#{@articulo.usuario.nickname}" do %> 
 							<code><%= @articulo.usuario.nickname %></code> 
 						<% end %> 
-						<%= @articulo.updated_at.strftime("%b %d %Y, %I:%M %p") %>
+						<%= @articulo.updated_at.strftime("%b %d %Y, %I:%M %p") %> <%= link_to raw("<i class=\"fa fa-pencil\"></i> Editar"), "http://#{ApplicationRecord::RUTA}/articulos/#{@articulo.id}/edit", :class => "btn btn-primary btn-sm" if @articulo.usuario_id == current_usuario.id %>
 					</div> 
 
 					<div class="pull-right">
-						<i class="fa fa-diamond"></i> <span class="like<%=@articulo.id%>"> <%= render partial: "likes", locals: {artlike: @artlike} %> </span>
+						<div class="1<%=@articulo.id%>">
+							<i class="fa fa-diamond"></i> <%= render partial: "likes", locals: {artlike: @artlike} %>
+						</div>
 					</div>
 					</div>
 				</div> 
@@ -101,7 +103,7 @@
 									<span class="detalles-articulo"><%= @articulo.categoria.upcase %></span>
 									<% tags = @articulo.tags.split(';') %>
 									<% tags.each do |tag|%>
-											<code><%= tag %></code>
+											<%= link_to busqueda_path(:busqueda => "#{tag}"), :style => "display:inline-block;", :method => :post do %><code><%= tag %></code><%end%>
 									<% end %>
 								</div>
 								<div class="pull-right">

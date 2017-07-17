@@ -1,6 +1,6 @@
 <!-- Aside -->
 <aside id="extra-content">
-	<h3 class="text-info"><small><i class="fa fa-star"></i><span style="vertical-align: middle;"></span></small> Sitios útiles</h3>
+	<h3 class="text-info"><small><i class="fa fa-link"></i><span style="vertical-align: middle;"></span></small> Sitios útiles</h3>
 	<p>
 		Te mostramos una lista de sitios útiles en los cuales también podrás obtener conocimientos sobre programación en diferentes lenguajes y plataformas
 	</p>
@@ -18,7 +18,7 @@
 	
 	<!-- Últimos Artículos -->
 	<section>
-		<h3>Últimos artículos</h3>
+		<h3 class="text-info"><small><i class="fa fa-diamond"></i></small> Últimos artículos</h3>
 		<ul>
 		</ul>
 		
@@ -36,26 +36,30 @@
 			<hr>
 		<% end %>			
 
-		
-		<p>
-			orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
-		<p>
-			Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
+		<h3 class="text-info"><small><i class="fa fa-tags"></i></small> Etiquetas </h3>
+			<ul class="tags">
+				<li><%= link_to busqueda_path(:busqueda => "ruby on rails"), :class => "fsNon", :method => :post do %><code>Ruby on Rails</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "JAVA"), :class => "fsPair", :method => :post do %><code>JAVA</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "HTML5"), :class => "fsNon", :method => :post do %><code>HTML5</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "CSS3"), :class => "fsPair", :method => :post do %><code>CSS3</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "jQuery"), :class => "fsNon", :method => :post do %><code>jQuery</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "CRUD"), :class => "fsPair", :method => :post do %><code>CRUD</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "ISTQB"), :class => "fsNon", :method => :post do %><code>ISTQB</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "Selenium"), :class => "fsPair", :method => :post do %><code>Selenium</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "Primefaces"), :class => "fsNon", :method => :post do %><code>Primefaces</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "Video juegos"), :class => "fsPair", :method => :post do %><code>Video Juegos</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "Codegirls"), :class => "fsNon", :method => :post do %><code>Codegirls</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "Ruby"), :class => "fsPair", :method => :post do %><code>Ruby</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "Base de datos"), :class => "fsNon", :method => :post do %><code>Base de datos</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "Demos"), :class => "fsPair", :method => :post do %><code>Demos</code><%end%></li>
+				<li><%= link_to busqueda_path(:busqueda => "PS4"), :class => "fsNon", :method => :post do %><code>PS4</code><%end%></li>
+			</ul>
 	<!-- /Últimos Artículos -->
 	</section>
 	
 	<!-- Contenido por Carpetas -->
 	<section id="categorias">
-		<h3>Contenido por categorías</h3>
+		<h3 class="text-info"><small><i class="fa fa-folder"></i></small> Contenido por categorías</h3>
 		<p>
 			Puedes acceder a los artículos por su categoría.
 		</p>
@@ -101,7 +105,7 @@
 	
 	<!-- Redes Sociales -->
 	<section>
-		<h3>Redes Sociales</h3>
+		<h3 class="text-info"><small><i class="fa fa-heart"></i></small> Redes Sociales</h3>
 		<p>
 			¡No te olvdes de seguirnos en nuestras redes sociales Facebook, Twitter y suscribirte en nuestro canal de YouTube, publicamos más contenido en ellas! ¡No te arrepentirás!
 		</p>

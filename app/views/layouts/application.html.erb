@@ -18,7 +18,7 @@
   <body>
     <%= render 'layouts/header' %>
     <!-- Si no se esta registrado, se verá el slide grande -->
-    <%= render 'layouts/cbslide' if !usuario_signed_in? %>
+    <%= render 'layouts/cbslide' if (current_page?(inicio_path) || current_page?(root_path)) && !usuario_signed_in? %>
   <!-- Contenido Principal -->
   <!-- Sólo se pondrá el margentop cuando se este logeado-->
     <div class="container-fluid well" style="<%= "margin-top: 50px"  if 1==2 %>">
