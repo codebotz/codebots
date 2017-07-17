@@ -73,7 +73,10 @@
 						Publicado por: <%= link_to "/#{@articulo.usuario.nickname}" do %> 
 							<code><%= @articulo.usuario.nickname %></code> 
 						<% end %> 
-						<%= @articulo.updated_at.strftime("%b %d %Y, %I:%M %p") %> <%= link_to raw("<i class=\"fa fa-pencil\"></i> Editar"), "http://#{ApplicationRecord::RUTA}/articulos/#{@articulo.id}/edit", :class => "btn btn-primary btn-sm" if @articulo.usuario_id == current_usuario.id %>
+						<%= @articulo.updated_at.strftime("%b %d %Y, %I:%M %p") %> 
+						<%if usuario_signed_in? %>
+							<%= link_to raw("<i class=\"fa fa-pencil\"></i> Editar"), "http://#{ApplicationRecord::RUTA}/articulos/#{@articulo.id}/edit", :class => "btn btn-primary btn-sm" if @articulo.usuario_id == current_usuario.id %>
+						<% end %>
 					</div> 
 
 					<div class="pull-right">
