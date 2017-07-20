@@ -84,8 +84,9 @@ class ArticulosController < ApplicationController
   # PATCH/PUT /articulos/1.json
   def update
     respond_to do |format|
+      @articulo = Articulo.find(params[:id])
       if @articulo.update(articulo_params)
-        format.html { redirect_to @articulo, notice: 'Articulo was successfully updated.' }
+        format.html { redirect_to "/articulos/#{@articulo.url}", notice: 'Articulo was successfully updated.' }
         format.json { render :show, status: :ok, location: @articulo }
       else
         format.html { render :edit }
