@@ -81,6 +81,8 @@
   <div class="col-lg-6 clearfix">
     <div class="panel panel-primary">
       <!-- Default panel contents -->
+
+
       <div class="panel-heading">
           <% if usuario_signed_in? %>
               <% if articulo.usuario_id == current_usuario.id %>
@@ -105,9 +107,10 @@
                     </ul>
                   </div>
                 </div>            
+                </div>            
               <% end %>
           <% end %>
-          </div>
+          
           <div class="row container-fluid post">
             <%= link_to "articulos/#{articulo.url}" do%>
               <h4><%= articulo.titulo %></h4>
@@ -120,6 +123,12 @@
               </div>  
           </div>
       </div>
+
+
+
+
+
+
           <div class="panel-body">
             <p><%= truncate(articulo.contenido.html_safe, :length => 250) %></p>
               <% if (articulo.contenido.length > 250) %>
