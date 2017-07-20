@@ -1,33 +1,36 @@
 <div class="container-fluid perfil">
 <!-- Heading Row -->    
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12 col-lg-8">
                 <%= image_tag("900x350.png", :alt => "Portada Default", class: "img-responsive img-portfolio img-hover", :style => "width:100%;") %>
             </div>
             <!-- /.col-md-8 -->
-            <div class="col-md-4">
+            <div class="col-md-12 col-lg-4">
                 <h1><%= @usuario.nombre_completo %><small> <%= @usuario.nickname %></small></h1><br>
                 <span class="usuario-datos">
                   <%=  @usuario.created_at.strftime("Usuario desde: %d/%m/%Y")%><br>
-                  <i class="fa fa-commenting-o" aria-hidden="true"></i> Post creados: <%=  @usuario.posts.count %><br>
-                  <i class="fa fa-users" aria-hidden="true"></i> Seguidores: <%=  @usuario.posts.count %><br>
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i> Artículos creados: <%=  @misArticulos.count %><br>
+                  <i class="fa fa-users" aria-hidden="true"></i> Seguidores: <%=  @usuario.articulos.count %><br>
                 </span>
                 <%= link_to home_path, class: "btn btn-small btn-primary" do %>
                   <i class="fa fa-plus-circle" aria-hidden="true"></i> Seguir                
                 <% end %>
                 <!--a class="btn btn-primary btn-md" href="#">Seguir contenido</a-->
-                <hr>
-                <!-- Descripción corta del perfil... Maximo 300 caracteres -->
+                <br/><br/>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+          <!-- Descripción corta del perfil... Maximo 500 caracteres -->
                 <p>
                 Aquí podrás escribir una descrición corta de ti, tu perfil o poner simplemente lo que tú quieras! Recuerda que esto será visible a todas aquellas personas que visiten tu perfil.
                 </p>
                 <p>
                 ☯Sic parvis magna☯
                 </p>
-            </div>
-            <!-- /.col-md-4 -->
         </div>
-        <!-- /.row -->
 
         <hr>
 
@@ -72,7 +75,7 @@
 
 
     <!-- Compartir -->
-      <div class="row">
+      <!--div class="row">
         <div class="col-md-12">
             <div class="widget-area no-padding blank">
             <div class="status-upload">
@@ -87,23 +90,23 @@
                 <button type="submit" class="btn btn-primary green"><i class="fa fa-share"></i> Compartir</button>
               </form>
             </div><!-- Status Upload  -->
-          </div><!-- Widget Area -->
-        </div>  
+          <!--/div><!-- Widget Area -->
+        <!--/div>  
       </div>
       <!-- End Compartir -->
 
         <hr>
 
 
-<!--% if @posts.size>0 %>
+<% if @misArticulos.size>0 %>
 <div id="bodypost" class="row marketing">
-< % @posts.each do |post| %>
+<% @misArticulos.each do |articulo| %>
   <div class="col-lg-6 clearfix">
     <div class="panel panel-primary">
       <!-- Default panel contents -->
-      <!--div class="panel-heading">
-          < % if usuario_signed_in? %>
-              < % if post.usuario_id == current_usuario.id %>
+      <div class="panel-heading">
+          <% if usuario_signed_in? %>
+              <% if articulo.usuario_id == current_usuario.id %>
               <div class="row container-fluid">
                 <div class="pull-right">
                   <div class="dropdown">
@@ -112,63 +115,61 @@
                       </i>
                     <ul class="dropdown-menu post-actions" aria-labelledby="post-actions">
                       <li>                              
-                        < %= link_to edit_post_path(post) do%> 
+                        <%= link_to edit_articulo_path(articulo) do%> 
                           <i class="fa fa-pencil"> Editar</i>
-                        < % end %>
+                        <% end %>
                       </li>
-                      <!--li role="separator" class="divider"></li-->
-                      <!--li>                              
-                        < %= link_to post, method: :delete, data: {confirm: "¿Estás seguro de borrar este post?"} do %>
+                      <li role="separator" class="divider"></li>
+                      <li>                              
+                        <%= link_to articulo, method: :delete, data: {confirm: "¿Estás seguro de borrar este articulo?"} do %>
                           <i class="fa fa-trash"> Eliminar</i>
-                        < % end %>
+                        <% end %>
                       </li>
                     </ul>
                   </div>
                 </div>            
-              < % end %>
-          < % end %>
+              <% end %>
+          <% end %>
           </div>
           <div class="row container-fluid post">
-            < %= link_to post do%>
-              <h4>< %= post.titulo %></h4>
-            < % end %>
+            <%= link_to "articulos/#{articulo.url}" do%>
+              <h4><%= articulo.titulo %></h4>
+            <% end %>
             <br>
               <div class="pull-left">
-                Hace < %= time_ago_in_words(post.created_at) %> por < %= link_to "/#{post.usuario.nickname}" do%>
-                < %= post.usuario.nombre_completo%>
-                < % end %>
+                Hace <%= time_ago_in_words(articulo.created_at) %> por <%= link_to "/#{articulo.usuario.nickname}" do%>
+                <%= articulo.usuario.nombre_completo%>
+                <% end %>
               </div>  
           </div>
-        <!--code>< %= time_ago_in_words(post.created_at) %> ago</code> por <strong>< %= post.usuario.nickname%></strong-->
-        <!--code>Hace < %= time_ago_in_words(post.created_at) %></code> por <strong>< %= link_to post.usuario.nickname, post.usuario.nickname %></strong-->
-      <!--/div>
+      </div>
           <div class="panel-body">
-            <p>< %= truncate(post.contenido.html_safe, :length => 250) %></p>
-              < % if (post.contenido.length > 250) %>
-                < %= link_to "Ver más", post%>
-              < % end %>
+            <p><%= truncate(articulo.contenido.html_safe, :length => 250) %></p>
+              <% if (articulo.contenido.length > 250) %>
+                <%= link_to "Ver más", articulo%>
+              <% end %>
           </div>
           <div class="panel-footer">
             <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Me gusta</a>
             
-            < % if !post.likes.nil? %>
-              < % if post.likes > 0 %>
-                <span class="pull-right"><i class="fa fa-diamond" aria-hidden="true"> < %= post.likes%></i><span>
-              < % end %>
-            < % end %>
+            <% if !articulo.like.nil? %>
+              <% if articulo.like > 0 %>
+                <span class="pull-right"><i class="fa fa-diamond" aria-hidden="true"> <%= articulo.like%></i><span>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
-    < % end %>
+    <% end %>
 </div>
-< %= will_paginate @posts %>
-<!--div class="clearfix visible-sm-block"></div-->
-<!--% else %>
+<!--%= will_paginate @articulo %-->
+<div class="clearfix visible-sm-block"></div>
+<% else %>
   <div class="center">
-    <div class="panel panel-primary">
+    <div class="panel panel-info">
       <div class="panel-body">
-        <i class="fa fa-frown-o" aria-hidden="true"></i> Aún no tienes post, crea uno < %= link_to "Crear post", new_post_path, class: "btn btn-primary" %>        
+        <p><i class="fa fa-frown-o" aria-hidden="true"></i> Aún no tienes artículos, crea uno </p><%= link_to "Crear artículo", new_articulo_path, class: "btn btn-primary" %>        
       </div>
     </div>
   </div>
-< %end%-->
+<%end%>
