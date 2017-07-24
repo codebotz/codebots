@@ -368,7 +368,7 @@ footer #categorias li a:hover{
 	background-color: yellow;
 }
 
-.container h1{
+.container h3{
 	font-family: "Tittle-Post";
 }
 #top-row p{
@@ -947,4 +947,10 @@ margin-right: 7px;
 
 #articulodata{
   display: inline-block;
+}
+.carousel-caption{
+  font-size: .9em;
+}
+.carousel-caption .btn-info{
+ font-size: .9em; 
 }

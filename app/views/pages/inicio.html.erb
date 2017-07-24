@@ -1,6 +1,6 @@
 <!-- si se esta registrado se vera el slide pero dentro del yield(dentro de la pagina a la que se invoca, solo en la de inicio) -->
 <%= render 'layouts/cbslide' if usuario_signed_in? %>
-
+<%= render 'layouts/flash' %>
 <!-- Sección Artículos -->
 <section class="row col-xs-12 articles">
     <% cont = 1 %>

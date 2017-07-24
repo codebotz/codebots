@@ -3,7 +3,7 @@
   <div class="panel-heading">
     <h2>Iniciar sesión</h2>    
   </div>
-
+<%= render 'layouts/flash' %>
 <div class="panel-body">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       
