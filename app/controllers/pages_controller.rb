@@ -37,7 +37,7 @@ class PagesController < ApplicationController
         puts "\nIngreso al metodo de búsqueda..."
         #Comento la búsqueda de usuarios, aún no dejaté visible esta funcionalidad 
         #@rusuarios = Usuario.where("nickname like ?", "%#{@busqueda.downcase}%")
-        @rarticulos = Articulo.where("tags like ?", "%#{@busqueda.downcase}%").order(created_at: :desc)
+        @rarticulos = Articulo.where("LOWER(tags) like ?", "%#{@busqueda.downcase}%").order(created_at: :desc)
         #.paginate(:page => params[:page], :per_page => 10)
         format.html { render :busqueda}
       else
