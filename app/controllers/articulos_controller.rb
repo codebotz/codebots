@@ -71,7 +71,7 @@ class ArticulosController < ApplicationController
     respond_to do |format|
       if @articulo.save
         puts "\n\nGuardado exitoso del artículo"
-        format.html { redirect_to 'http://#{ApplicationRecord::RUTA}/articulos/#{@articulo.url}', notice: 'Articulo was successfully created.' }
+        format.html { redirect_to '/articulos/#{@articulo.url}', notice: 'Articulo was successfully created.' }
         format.json { render :show, status: :created, location: @articulo }
       else
         format.html { render :new }
