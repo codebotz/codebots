@@ -80,6 +80,13 @@
                         </li>
                         <% if usuario_signed_in? %>
                             <li>
+                                <% if current_usuario.nickname == "codebot" %>
+                                  <%= link_to new_articulo_path, alt: "Nuevo Articulo" do%>
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                  <% end %>
+                                <% end %>
+                            </li>
+                            <li>
                                 <%= link_to home_path do %>
                                     <i class="fa fa-user-circle-o" aria-hidden="true"></i> <%= current_usuario.nickname %>
                                 <% end %>

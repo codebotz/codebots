@@ -6,15 +6,6 @@
       <div class="pull-left">
         <h2>Artículos de Testing <i class="fa fa-bug"></i></h2>
       </div>
-      <% if usuario_signed_in? %>
-        <% if current_usuario.nickname == "codebot" %>
-          <div class="pull-right">
-          <%= link_to new_articulo_path, class: "btn btn-primary btn-sm", alt: "Nuevo Articulo" do%>
-            <i class="fa fa-plus-circle" aria-hidden="true"></i> Nuevo artículo
-          <% end %>
-        </div>
-        <% end %>
-      <% end %>
     </div>
   </div>
   <div class="panel-body">

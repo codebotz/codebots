@@ -1,3 +1,35 @@
 // Place all the styles related to the articulos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* jssor slider loading skin double-tail-spin css */
+
+.jssorl-004-double-tail-spin img {
+    animation-name: jssorl-004-double-tail-spin;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes jssorl-004-double-tail-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.jssorb056 .i {position:absolute;cursor:pointer;}
+.jssorb056 .i .b {fill:#000;fill-opacity:0.3;stroke:#fff;stroke-width:400;stroke-miterlimit:10;stroke-opacity:0.7;}
+.jssorb056 .i:hover .b {fill-opacity:.7;}
+.jssorb056 .iav .b {fill-opacity: 1;}
+.jssorb056 .i.idn {opacity:.3;}
+
+.jssort051 .p {position:absolute;top:0;left:0;background-color:#000;}
+.jssort051 .t {position:absolute;top:0;left:0;width:100%;height:100%;border:none;opacity:.45;}
+.jssort051 .p:hover .t{opacity:.8;}
+.jssort051 .pav .t, .jssort051 .pdn .t, .jssort051 .p:hover.pdn .t{opacity:1;}
