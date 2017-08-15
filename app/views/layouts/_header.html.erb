@@ -119,7 +119,11 @@
 
                     <% if usuario_signed_in? %>
                             <li>
-                                <i class="fa fa-plus-circle" aria-hidden="true"></i> 
+                                <% if current_usuario.nickname == "codebot" %>
+                                  <%= link_to new_articulo_path, alt: "Nuevo Articulo" do%>
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Nuevo articulo
+                                  <% end %>
+                                <% end %>
                             </li>
                             <li>
                                 <%= link_to home_path do %>
